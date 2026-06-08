@@ -63,39 +63,16 @@
                 </div>
             </div>
 
-            <!-- Categories Column -->
+            <!-- Quick Links Column -->
             <div class="foot-col">
-                <h5><?php esc_html_e( 'Categories', 'healthbeyondage' ); ?></h5>
+                <h5><?php esc_html_e( 'Quick Links', 'healthbeyondage' ); ?></h5>
                 <ul>
-                    <?php
-                    $cats = get_categories(['number' => 6, 'hide_empty' => true]);
-                    foreach ( $cats as $cat ) :
-                    ?>
-                        <li><a href="<?php echo esc_url( get_category_link( $cat->term_id ) ); ?>"><?php echo esc_html( $cat->name ); ?></a></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-
-            <!-- Company Column -->
-            <div class="foot-col">
-                <h5><?php esc_html_e( 'Company', 'healthbeyondage' ); ?></h5>
-                <ul>
-                    <li><a href="<?php echo esc_url( home_url('/about') ); ?>"><?php esc_html_e('About Us','healthbeyondage'); ?></a></li>
-                    <li><a href="<?php echo esc_url( home_url('/team') ); ?>"><?php esc_html_e('Meet Our Team','healthbeyondage'); ?></a></li>
-                    <li><a href="<?php echo esc_url( home_url('/contact') ); ?>"><?php esc_html_e('Contact Us','healthbeyondage'); ?></a></li>
-                    <li><a href="<?php echo esc_url( home_url('/blog') ); ?>"><?php esc_html_e('All Articles','healthbeyondage'); ?></a></li>
-                    <li><a href="<?php echo esc_url( get_post_type_archive_link('post') ); ?>"><?php esc_html_e('Trending','healthbeyondage'); ?></a></li>
-                </ul>
-            </div>
-
-            <!-- Legal Column -->
-            <div class="foot-col">
-                <h5><?php esc_html_e( 'Legal', 'healthbeyondage' ); ?></h5>
-                <ul>
-                    <li><a href="<?php echo esc_url( home_url('/privacy-policy') ); ?>"><?php esc_html_e('Privacy Policy','healthbeyondage'); ?></a></li>
-                    <li><a href="<?php echo esc_url( home_url('/terms-of-use') ); ?>"><?php esc_html_e('Terms of Use','healthbeyondage'); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url('/about') ); ?>"><?php esc_html_e('About us','healthbeyondage'); ?></a></li>
                     <li><a href="<?php echo esc_url( home_url('/medical-disclaimer') ); ?>"><?php esc_html_e('Medical Disclaimer','healthbeyondage'); ?></a></li>
-                    <li><a href="<?php echo esc_url( home_url('/cookie-policy') ); ?>"><?php esc_html_e('Cookie Policy','healthbeyondage'); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url('/privacy-policy') ); ?>"><?php esc_html_e('Privacy Policy','healthbeyondage'); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url('/disclaimer') ); ?>"><?php esc_html_e('Disclaimer','healthbeyondage'); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url('/terms-of-use') ); ?>"><?php esc_html_e('Terms of Use','healthbeyondage'); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url('/contact') ); ?>"><?php esc_html_e('Contact Us','healthbeyondage'); ?></a></li>
                 </ul>
             </div>
 
