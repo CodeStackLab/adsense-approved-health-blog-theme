@@ -45,10 +45,11 @@ function hba_register_reviewer_cpt() {
         'show_in_nav_menus'     => false,
         'can_export'            => true,
         'has_archive'           => false,
-        'exclude_from_search'   => true,
-        'publicly_queryable'    => false, // Don't need individual single pages for reviewers unless desired later
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true, // Enable profile pages for reviewers
         'capability_type'       => 'post',
         'show_in_rest'          => true,
+        'rewrite'               => array( 'slug' => 'reviewer' ),
     );
     register_post_type( 'hba_reviewer', $args );
 }
