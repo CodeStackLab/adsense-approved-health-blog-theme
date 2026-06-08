@@ -76,12 +76,12 @@ ul { list-style: none; }
 .home-hero-right img.hero-photo { width: 100%; height: 380px; object-fit: cover; object-position: center top; border-radius: 16px; display: block; box-shadow: 0 12px 40px rgba(13,107,82,0.15); }
 
 /* Medically Reviewed floating card on hero image */
-.home-medrev-card { position: absolute; bottom: -1rem; left: -1.5rem; background: #fff; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 1rem; max-width: 360px; z-index: 10; }
-.home-medrev-card .mrc-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--g-light); }
-.home-medrev-card .mrc-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.home-medrev-card .mrc-text h4 { font-size: .82rem; font-weight: 700; color: var(--text); margin-bottom: .15rem; }
-.home-medrev-card .mrc-text p { font-size: .72rem; color: var(--mid); line-height: 1.4; margin-bottom: .35rem; }
-.home-medrev-card .mrc-text a { font-size: .72rem; color: #E81D76; font-weight: 600; }
+.home-medrev-card { position: absolute; bottom: 1.5rem; left: 1.5rem; background: #fff; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 1rem; max-width: 380px; z-index: 10; }
+.home-medrev-card .mrc-avatar { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #f4f6f8; padding: 4px; }
+.home-medrev-card .mrc-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.home-medrev-card .mrc-text h4 { font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; }
+.home-medrev-card .mrc-text p { font-size: .78rem; color: var(--mid); line-height: 1.4; margin-bottom: .4rem; }
+.home-medrev-card .mrc-text a { font-size: .8rem; color: #E81D76; font-weight: 600; display: inline-flex; align-items: center; gap: .25rem; }
 .home-medrev-card .mrc-text a:hover { color: #C21661; }
 
 /* ========== FEATURED ARTICLES SECTION ========== */
