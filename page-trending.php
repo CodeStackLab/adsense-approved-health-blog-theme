@@ -59,6 +59,8 @@ if ( $trending->have_posts() ) {
             <div class="trend-main-img">
                 <?php if ($p1_thumb) : ?>
                     <img src="<?php echo esc_url($p1_thumb); ?>" alt="<?php echo esc_attr(get_the_title($p1_id)); ?>" />
+                <?php else : ?>
+                    🛡️
                 <?php endif; ?>
                 <div class="rank-badge">1</div>
                 <div class="hot-badge">🔥 <?php esc_html_e('Hot','healthbeyondage'); ?></div>
@@ -134,5 +136,22 @@ if ( $trending->have_posts() ) {
         ?>
     </div>
 </div>
+
+<section class="nl-section">
+    <div class="nl-inner">
+        <div class="nl-chip">✦ <?php esc_html_e('Weekly digest','healthbeyondage'); ?></div>
+        <h2><?php esc_html_e('Get Trending Articles in Your Inbox','healthbeyondage'); ?></h2>
+        <p><?php esc_html_e("The week's most popular health content, delivered every Friday.",'healthbeyondage'); ?></p>
+        <form class="nl-form" action="" method="post">
+            <input type="email" placeholder="<?php esc_attr_e('your@email.com','healthbeyondage'); ?>" required />
+            <button type="submit"><?php esc_html_e('Subscribe Free','healthbeyondage'); ?></button>
+        </form>
+        <div class="nl-perks">
+            <div class="nl-perk">✔️ <?php esc_html_e('Weekly health insights','healthbeyondage'); ?></div>
+            <div class="nl-perk">✔️ <?php esc_html_e('Evidence-based research','healthbeyondage'); ?></div>
+            <div class="nl-perk">✔️ <?php esc_html_e('Unsubscribe anytime','healthbeyondage'); ?></div>
+        </div>
+    </div>
+</section>
 
 <?php get_footer(); ?>
