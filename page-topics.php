@@ -17,7 +17,7 @@ get_header();
 <div class="section" style="background:var(--off); min-height:50vh;">
     <div class="topics-directory-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:1.5rem; max-width:1180px; margin:0 auto;">
         <?php
-        $cats = get_categories(['hide_empty' => false]);
+        $cats = get_terms(['taxonomy' => ['category', 'post_tag'], 'hide_empty' => true]);
         $colors = ['bg-green','bg-gold','bg-plum','bg-blue','bg-rust'];
         
         foreach ( $cats as $idx => $cat ) {
@@ -26,7 +26,7 @@ get_header();
             $cat_img = get_term_meta( $cat->term_id, 'hba_cat_image', true ) ?: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80';
             $bg_color = ['#18868A','#0A7A7E','#128C8C','#C4DFE6','#E8F5E9'][$idx % 5];
             ?>
-            <a href="<?php echo esc_url( get_category_link( $cat->term_id ) ); ?>" class="topic-dir-card" style="display:flex; align-items:center; gap:1rem; background:#fff; padding:1rem; border-radius:12px; border:1px solid var(--border); transition:all 0.2s; text-decoration:none; color:var(--text);">
+            <a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="topic-dir-card" style="display:flex; align-items:center; gap:1rem; background:#fff; padding:1rem; border-radius:12px; border:1px solid var(--border); transition:all 0.2s; text-decoration:none; color:var(--text);">
                 <div class="tdc-img" style="width:60px; height:60px; border-radius:10px; background:<?php echo esc_attr($bg_color); ?>; overflow:hidden; flex-shrink:0;">
                     <img src="<?php echo esc_url($cat_img); ?>" alt="<?php echo esc_attr($cat->name); ?>" style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
                 </div>

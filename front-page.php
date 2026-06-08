@@ -158,7 +158,7 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
     <div class="explore-topics-inner">
         <div class="explore-topics-hd">
             <h2><?php esc_html_e( 'Explore by Health Topic', 'healthbeyondage' ); ?></h2>
-            <a href="<?php echo esc_url( home_url('/directory/topics') ); ?>"><?php esc_html_e( 'View all →', 'healthbeyondage' ); ?></a>
+            <a href="<?php echo esc_url( home_url('/topics') ); ?>"><?php esc_html_e( 'View all topics →', 'healthbeyondage' ); ?></a>
         </div>
         <div class="topic-carousel-wrap">
             <div class="topic-carousel" id="topicCarousel">
@@ -179,11 +179,20 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
                 ];
 
                 foreach ( $ordered_topics as $topic ) {
-                    $cat = get_term_by( 'slug', $topic['slug'], 'category' );
-                    if ( $cat ) {
-                        $cat_img = get_term_meta( $cat->term_id, 'hba_cat_image', true ) ?: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80';
+                    // Try category first
+                    $term = get_term_by( 'slug', $topic['slug'], 'category' );
+                    // If category is empty or doesn't exist, try tag
+                    if ( ! $term || $term->count == 0 ) {
+                        $tag = get_term_by( 'slug', $topic['slug'], 'post_tag' );
+                        if ( $tag && $tag->count > 0 ) {
+                            $term = $tag;
+                        }
+                    }
+
+                    if ( $term ) {
+                        $cat_img = get_term_meta( $term->term_id, 'hba_cat_image', true ) ?: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80';
                         ?>
-                        <a href="<?php echo esc_url( get_category_link( $cat->term_id ) ); ?>" class="topic-card">
+                        <a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="topic-card">
                             <div class="topic-card-img" style="background:<?php echo esc_attr( $topic['bg'] ); ?>">
                                 <img src="<?php echo esc_url( $cat_img ); ?>" alt="<?php echo esc_attr( $topic['name'] ); ?>" loading="lazy" />
                             </div>
