@@ -223,8 +223,8 @@ ul { list-style: none; }
 .filter-inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .filter-label { font-size: .72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 .filter-tags { display: flex; gap: .5rem; flex-wrap: wrap; }
-.tag { display: inline-flex; align-items: center; padding: .32rem .8rem; border-radius: 20px; font-size: .73rem; font-weight: 500; border: 1px solid var(--border2); color: var(--mid); cursor: pointer; transition: all .15s; background: #fff; }
-.tag:hover, .tag.active { background: var(--g2); color: #fff; border-color: var(--g2); }
+a.tag, span.tag, div.tag { display: inline-flex; align-items: center; padding: .32rem .8rem; border-radius: 20px; font-size: .73rem; font-weight: 500; border: 1px solid var(--border2); color: var(--mid); cursor: pointer; transition: all .15s; background: #fff; text-decoration: none; }
+a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.tag.active { background: var(--g2); color: #fff; border-color: var(--g2); }
 
 /* ========== FEATURED LONG READ ========== */
 .featured-longread { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: grid; grid-template-columns: 1fr 45%; margin-bottom: 2rem; cursor: pointer; transition: box-shadow .2s; }
