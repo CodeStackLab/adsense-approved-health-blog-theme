@@ -99,11 +99,12 @@ function hba_reviewer_meta_box_html( $post ) {
         'order'          => 'ASC'
     ));
 
-    echo '<p><label for="hba_reviewer_field">';
+    echo '<div style="padding: 5px 0 10px;">';
+    echo '<p style="margin-bottom: 8px;"><strong><label for="hba_reviewer_field">';
     _e( 'Select the Medical Reviewer for this article:', 'healthbeyondage' );
-    echo '</label></p>';
+    echo '</label></strong></p>';
 
-    echo '<select id="hba_reviewer_field" name="hba_reviewer_field" style="width:100%;">';
+    echo '<select id="hba_reviewer_field" name="hba_reviewer_field" style="width:100%; max-width:100%; box-sizing:border-box; padding:4px 8px; border-radius:4px; border:1px solid #8c8f94; min-height:32px;">';
     echo '<option value="">' . __( '— Select Reviewer (or use global setting) —', 'healthbeyondage' ) . '</option>';
     
     if ( $reviewers ) {
@@ -117,7 +118,8 @@ function hba_reviewer_meta_box_html( $post ) {
         }
     }
     echo '</select>';
-    echo '<p class="description">' . __( 'If left blank, the global Lead Medical Reviewer from Customizer settings will be used.', 'healthbeyondage' ) . '</p>';
+    echo '<p class="description" style="margin-top:12px; color:#646970; font-size:13px; line-height:1.4;">' . __( 'If left blank, the global Lead Medical Reviewer from Customizer settings will be used.', 'healthbeyondage' ) . '</p>';
+    echo '</div>';
 }
 
 /**
