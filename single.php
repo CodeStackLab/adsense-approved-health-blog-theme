@@ -53,6 +53,7 @@ $tags = get_the_tags();
         <h1><?php the_title(); ?></h1>
 
         <!-- Byline -->
+        <?php if ( get_theme_mod( 'hba_sp_show_byline', true ) ) : ?>
         <div class="article-byline">
             <div class="byline-author">
                 <div class="byline-av"><?php echo esc_html( $initials ); ?></div>
@@ -68,8 +69,10 @@ $tags = get_the_tags();
             <div class="byline-sep"></div>
             <div class="byline-info">✓ <strong><?php esc_html_e('Medically reviewed','healthbeyondage'); ?></strong></div>
         </div>
+        <?php endif; ?>
 
         <!-- Medical Review Bar -->
+        <?php if ( get_theme_mod( 'hba_sp_show_medrev', true ) ) : ?>
         <div class="medrev-bar">
             <div style="font-size:1.2rem">🩺</div>
             <p>
@@ -78,6 +81,7 @@ $tags = get_the_tags();
                 <a href="<?php echo esc_url( home_url('/team') ); ?>"><?php esc_html_e( 'Learn about our review process.', 'healthbeyondage' ); ?></a>
             </p>
         </div>
+        <?php endif; ?>
 
         <!-- Hero Image -->
         <div class="article-hero-img <?php echo ! $thumb_url ? 'placeholder' : ''; ?>">
@@ -94,7 +98,7 @@ $tags = get_the_tags();
         </div>
 
         <!-- Tags -->
-        <?php if ( $tags ) : ?>
+        <?php if ( $tags && get_theme_mod( 'hba_sp_show_tags', true ) ) : ?>
             <div class="article-tags">
                 <?php foreach ( $tags as $tag ) : ?>
                     <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="article-tag"><?php echo esc_html( $tag->name ); ?></a>
@@ -103,6 +107,7 @@ $tags = get_the_tags();
         <?php endif; ?>
 
         <!-- Share Bar -->
+        <?php if ( get_theme_mod( 'hba_sp_show_share', true ) ) : ?>
         <div class="share-bar">
             <span class="share-label"><?php esc_html_e( 'Share this article:', 'healthbeyondage' ); ?></span>
             <button class="share-btn" data-share="facebook">f <?php esc_html_e('Facebook','healthbeyondage'); ?></button>
@@ -110,6 +115,7 @@ $tags = get_the_tags();
             <button class="share-btn" data-share="copy">🔗 <?php esc_html_e('Copy Link','healthbeyondage'); ?></button>
             <button class="share-btn" data-share="email">📧 <?php esc_html_e('Email','healthbeyondage'); ?></button>
         </div>
+        <?php endif; ?>
 
         <!-- Related Articles -->
         <?php

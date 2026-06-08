@@ -233,6 +233,40 @@ function hba_customizer( $wp_customize ) {
 
     $wp_customize->add_setting( 'hba_articles_per_page', [ 'default' => 9, 'sanitize_callback' => 'absint' ] );
     $wp_customize->add_control( 'hba_articles_per_page', [ 'label' => __( 'Articles Per Page', 'healthbeyondage' ), 'section' => 'hba_layout', 'type' => 'number', 'input_attrs' => ['min' => 3, 'max' => 30] ] );
+
+    /* ============================
+       SECTION: Single Post Settings
+    ============================ */
+    $wp_customize->add_section( 'hba_single_post', [
+        'title' => __( 'Single Post Settings', 'healthbeyondage' ),
+        'panel' => 'hba_panel',
+    ] );
+
+    // Toggles
+    $toggles = [
+        'hba_sp_show_medrev' => 'Show Medically Reviewed Bar',
+        'hba_sp_show_byline' => 'Show Author Byline',
+        'hba_sp_show_tags'   => 'Show Article Tags',
+        'hba_sp_show_share'  => 'Show Share Bar',
+    ];
+    foreach ( $toggles as $id => $label ) {
+        $wp_customize->add_setting( $id, [ 'default' => true, 'sanitize_callback' => 'rest_sanitize_boolean', 'transport' => 'refresh' ] );
+        $wp_customize->add_control( $id, [ 'label' => __( $label, 'healthbeyondage' ), 'section' => 'hba_single_post', 'type' => 'checkbox' ] );
+    }
+
+    // Typography
+    $wp_customize->add_setting( 'hba_sp_title_size', [ 'default' => 2.2, 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'refresh' ] );
+    $wp_customize->add_control( 'hba_sp_title_size', [ 'label' => __( 'Title Font Size (rem)', 'healthbeyondage' ), 'section' => 'hba_single_post', 'type' => 'number', 'input_attrs' => ['min' => 1, 'max' => 5, 'step' => 0.1] ] );
+
+    $wp_customize->add_setting( 'hba_sp_content_size', [ 'default' => 0.92, 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'refresh' ] );
+    $wp_customize->add_control( 'hba_sp_content_size', [ 'label' => __( 'Content Font Size (rem)', 'healthbeyondage' ), 'section' => 'hba_single_post', 'type' => 'number', 'input_attrs' => ['min' => 0.7, 'max' => 1.5, 'step' => 0.05] ] );
+
+    // Colors
+    $wp_customize->add_setting( 'hba_sp_kt_bg', [ 'default' => '#1B6B3A', 'sanitize_callback' => 'sanitize_hex_color', 'transport' => 'refresh' ] );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hba_sp_kt_bg', [ 'label' => __( 'Key Takeaways Background', 'healthbeyondage' ), 'section' => 'hba_single_post' ] ) );
+
+    $wp_customize->add_setting( 'hba_sp_callout_border', [ 'default' => '#27903F', 'sanitize_callback' => 'sanitize_hex_color', 'transport' => 'refresh' ] );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hba_sp_callout_border', [ 'label' => __( 'Callout Accent Border', 'healthbeyondage' ), 'section' => 'hba_single_post' ] ) );
 }
 add_action( 'customize_register', 'hba_customizer' );
 

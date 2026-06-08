@@ -71,6 +71,11 @@ function hba_get_customizer_css() {
     $body_font = get_theme_mod( 'hba_body_font',       "'DM Sans', system-ui, sans-serif" );
     $head_font = get_theme_mod( 'hba_heading_font',    "'Merriweather', Georgia, serif" );
 
+    $sp_title_size   = get_theme_mod( 'hba_sp_title_size', 2.2 );
+    $sp_content_size = get_theme_mod( 'hba_sp_content_size', 0.92 );
+    $sp_kt_bg        = get_theme_mod( 'hba_sp_kt_bg', '#1B6B3A' );
+    $sp_callout_border = get_theme_mod( 'hba_sp_callout_border', '#27903F' );
+
     return "
     :root {
         --g1: {$primary};
@@ -80,6 +85,10 @@ function hba_get_customizer_css() {
         --sans: {$body_font};
         --serif: {$head_font};
     }
+    .single-post .article-main h1 { font-size: {$sp_title_size}rem !important; }
+    .single-post .article-body { font-size: {$sp_content_size}rem !important; }
+    .single-post .key-takeaways { background: {$sp_kt_bg} !important; }
+    .single-post .callout { border-left-color: {$sp_callout_border} !important; }
     ";
 }
 
