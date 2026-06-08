@@ -32,19 +32,19 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
             <div class="home-trust-row">
                 <div class="htrust-item">
                     <div class="htrust-ico">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3L12 14l-4.8 2.6.9-5.3L4.3 7.6l5.3-.8z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                     </div>
                     <span class="htrust-lbl"><?php echo esc_html( $trust1 ); ?></span>
                 </div>
                 <div class="htrust-item">
                     <div class="htrust-ico">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h4m0 0V8m0 4h4"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M6 14h2l2-3 2 6 2-3h4"/></svg>
                     </div>
                     <span class="htrust-lbl"><?php echo esc_html( $trust2 ); ?></span>
                 </div>
                 <div class="htrust-item">
                     <div class="htrust-ico">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <span class="htrust-lbl"><?php echo esc_html( $trust3 ); ?></span>
                 </div>
