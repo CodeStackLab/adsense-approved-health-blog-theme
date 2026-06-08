@@ -1,4 +1,7 @@
 /* ========== RESET & ROOT ========== */
+::selection { background: rgba(26,122,60,0.2); color: inherit; }
+::-moz-selection { background: rgba(26,122,60,0.2); color: inherit; }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --g1: #1A7A3C;
@@ -365,7 +368,19 @@ ul { list-style: none; }
 .nl-sidebar { background: var(--g1); }
 .nl-sidebar .sidebar-card-body { text-align: center; padding: 1.4rem; }
 .nl-sidebar input { width: 100%; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 6px; padding: .55rem .8rem; color: #fff; font-family: var(--sans); font-size: .82rem; outline: none; margin-bottom: .65rem; }
-.nl-sidebar button { width: 100%; background: #fff; color: var(--g1) !important; border: none; border-radius: 6px; padding: .75rem; font-family: var(--sans); font-weight: 700; font-size: .86rem; cursor: pointer; display: block; }
+.nl-sidebar input::placeholder { color: rgba(255,255,255,.6); opacity: 1; }
+.nl-sidebar input::-moz-selection { background: rgba(255,255,255,0.3); color: #fff; }
+.nl-sidebar input::selection { background: rgba(255,255,255,0.3); color: #fff; }
+.nl-sidebar input:-webkit-autofill,
+.nl-sidebar input:-webkit-autofill:hover, 
+.nl-sidebar input:-webkit-autofill:focus, 
+.nl-sidebar input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--g1) inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+.nl-sidebar button { width: 100%; background: #fff; color: var(--g1) !important; border: none; border-radius: 6px; padding: .75rem; font-family: var(--sans); font-weight: 700; font-size: .86rem; cursor: pointer; display: block; transition: all 0.2s ease; }
+.nl-sidebar button:hover { background: #F5F8F6; transform: translateY(-1px); }
 
 /* ========== SEARCH PAGE ========== */
 .search-results-wrap { max-width: 1180px; margin: 0 auto; padding: 2.5rem 1.5rem; }
