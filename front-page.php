@@ -161,22 +161,21 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
             <a href="<?php echo esc_url( home_url('/blog') ); ?>"><?php esc_html_e( 'View all topics →', 'healthbeyondage' ); ?></a>
         </div>
         <div class="topic-carousel-wrap">
-            <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
             <div class="topic-carousel" id="topicCarousel">
                 <?php
                 $ordered_topics = [
-                    ['slug' => 'anxiety-depression', 'name' => 'Anxiety & Depression', 'bg' => '#5A4A7A'],
-                    ['slug' => 'digestive-health', 'name' => 'Digestive Health', 'bg' => '#3A7A5A'],
-                    ['slug' => 'heart-health', 'name' => 'Heart Health', 'bg' => '#7A1A2A'],
-                    ['slug' => 'menopause', 'name' => 'Menopause', 'bg' => '#6A3A7A'],
-                    ['slug' => 'type-2-diabetes', 'name' => 'Type 2 Diabetes', 'bg' => '#1A5A7A'],
-                    ['slug' => 'weight-management', 'name' => 'Weight Management', 'bg' => '#4A6A2A'],
-                    ['slug' => 'sleep-health', 'name' => 'Sleep Health', 'bg' => '#2A2A6A'],
-                    ['slug' => 'nutrition', 'name' => 'Nutrition', 'bg' => '#5A7A1A'],
-                    ['slug' => 'skin-care', 'name' => 'Skin Care', 'bg' => '#7A4A2A'],
-                    ['slug' => 'fitness', 'name' => 'Fitness & Exercise', 'bg' => '#1A7A3C'],
-                    ['slug' => 'mental-wellness', 'name' => 'Mental Wellness', 'bg' => '#4A6A8A'],
-                    ['slug' => 'preventive-health', 'name' => 'Preventive Health', 'bg' => '#6A5A1A'],
+                    ['slug' => 'anxiety-depression', 'name' => 'Anxiety & Depression', 'bg' => '#18868A'],
+                    ['slug' => 'digestive-health', 'name' => 'Digestive Health', 'bg' => '#0A7A7E'],
+                    ['slug' => 'heart-health', 'name' => 'Heart Health', 'bg' => '#128C8C'],
+                    ['slug' => 'menopause', 'name' => 'Menopause', 'bg' => '#C4DFE6'],
+                    ['slug' => 'type-2-diabetes', 'name' => 'Type 2 Diabetes', 'bg' => '#E8F5E9'],
+                    ['slug' => 'weight-management', 'name' => 'Weight Management', 'bg' => '#18868A'],
+                    ['slug' => 'sleep-health', 'name' => 'Sleep Health', 'bg' => '#0A7A7E'],
+                    ['slug' => 'nutrition', 'name' => 'Nutrition', 'bg' => '#C4DFE6'],
+                    ['slug' => 'skin-care', 'name' => 'Skin Care', 'bg' => '#128C8C'],
+                    ['slug' => 'fitness', 'name' => 'Fitness & Exercise', 'bg' => '#E8F5E9'],
+                    ['slug' => 'mental-wellness', 'name' => 'Mental Wellness', 'bg' => '#18868A'],
+                    ['slug' => 'preventive-health', 'name' => 'Preventive Health', 'bg' => '#0A7A7E'],
                 ];
 
                 foreach ( $ordered_topics as $topic ) {
@@ -195,12 +194,21 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
                 }
                 ?>
             </div>
-            <button class="carousel-btn next" aria-label="Next">&#8594;</button>
         </div>
-        <div class="carousel-dots">
-            <button class="carousel-dot active"></button>
-            <button class="carousel-dot"></button>
-            <button class="carousel-dot"></button>
+        <div class="carousel-bottom-ctrls">
+            <div class="carousel-dots">
+                <button class="carousel-dot active"></button>
+                <button class="carousel-dot"></button>
+                <button class="carousel-dot"></button>
+            </div>
+            <div class="carousel-arrows">
+                <button class="carousel-btn prev" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel-btn next" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
         </div>
     </div>
 </section>
