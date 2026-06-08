@@ -158,7 +158,7 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
     <div class="explore-topics-inner">
         <div class="explore-topics-hd">
             <h2><?php esc_html_e( 'Explore by Health Topic', 'healthbeyondage' ); ?></h2>
-            <a href="<?php echo esc_url( home_url('/blog') ); ?>"><?php esc_html_e( 'View all topics →', 'healthbeyondage' ); ?></a>
+            <a href="<?php echo esc_url( home_url('/directory/topics') ); ?>"><?php esc_html_e( 'View all →', 'healthbeyondage' ); ?></a>
         </div>
         <div class="topic-carousel-wrap">
             <div class="topic-carousel" id="topicCarousel">
