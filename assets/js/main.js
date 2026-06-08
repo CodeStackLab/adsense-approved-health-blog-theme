@@ -5,10 +5,10 @@
   // Mobile nav toggle
   document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
-    const navLinks  = document.querySelector('.nav-links');
-    if (hamburger && navLinks) {
+    const navMenuWrap = document.querySelector('.nav-menu-wrap');
+    if (hamburger && navMenuWrap) {
       hamburger.addEventListener('click', function() {
-        navLinks.classList.toggle('open');
+        navMenuWrap.classList.toggle('open');
       });
     }
 
