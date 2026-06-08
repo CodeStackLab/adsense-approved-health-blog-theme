@@ -83,7 +83,7 @@
                     <li><a href="<?php echo esc_url( home_url('/team') ); ?>"><?php esc_html_e('Meet Our Team','healthbeyondage'); ?></a></li>
                     <li><a href="<?php echo esc_url( home_url('/contact') ); ?>"><?php esc_html_e('Contact Us','healthbeyondage'); ?></a></li>
                     <li><a href="<?php echo esc_url( home_url('/blog') ); ?>"><?php esc_html_e('All Articles','healthbeyondage'); ?></a></li>
-                    <li><a href="<?php echo esc_url( get_post_type_archive_link('post') ); ?>"><?php esc_html_e('Trending','healthbeyondage'); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url('/trending') ); ?>"><?php esc_html_e('Trending','healthbeyondage'); ?></a></li>
                 </ul>
             </div>
 
