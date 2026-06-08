@@ -1,8 +1,8 @@
-# Health Beyond Age - WordPress Theme
+# AdSense Approved Health Blog Theme
 
 **Live Demo**: [https://healthbeyondage.com/](https://healthbeyondage.com/)
 
-A modern, fast, and SEO-friendly custom WordPress theme built from scratch without the use of page builders or block editors. Designed specifically for health, wellness, and medical content platforms.
+A modern, fast, and SEO-friendly custom WordPress theme built specifically for the **health, wellness, and medical blog niches**. This theme is optimized to help you get **Google AdSense approval** quickly by providing a clean, professional, and lightning-fast user experience without the bloat of page builders.
 
 ## Features
 - **100% Custom Built**: No Elementor, Gutenberg blocks, or heavy builders.
