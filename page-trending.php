@@ -5,18 +5,39 @@
  */
 get_header();
 
+// Determine Period Filter
+$period = isset($_GET['period']) ? sanitize_text_field($_GET['period']) : 'week';
+$date_query = [];
+
+if ( $period === 'week' ) {
+    $date_query = [ ['after' => '1 week ago'] ];
+} elseif ( $period === 'month' ) {
+    $date_query = [ ['after' => '1 month ago'] ];
+}
+
 // Get most viewed posts
-$trending = new WP_Query([
-    'posts_per_page' => 10,
+$trending_args = [
+    'posts_per_page' => 14, // 1 featured + 4 stack + 9 more
     'meta_key'       => 'hba_view_count',
     'orderby'        => 'meta_value_num',
     'order'          => 'DESC',
     'post_status'    => 'publish',
-]);
+];
+if ( ! empty($date_query) ) {
+    $trending_args['date_query'] = $date_query;
+}
 
-// If no view counts yet, just use recent
+$trending = new WP_Query($trending_args);
+
+// Fallback if no posts match the time period
 if ( ! $trending->have_posts() ) {
-    $trending = new WP_Query(['posts_per_page' => 10, 'post_status' => 'publish']);
+    unset($trending_args['date_query']);
+    $trending = new WP_Query($trending_args);
+}
+
+// Final fallback if absolutely no views
+if ( ! $trending->have_posts() ) {
+    $trending = new WP_Query(['posts_per_page' => 14, 'post_status' => 'publish']);
 }
 
 $posts_arr = [];
@@ -39,9 +60,9 @@ if ( $trending->have_posts() ) {
 <div class="section">
     <!-- Period Tabs -->
     <div class="period-tabs">
-        <button class="period-tab active"><?php esc_html_e('This Week','healthbeyondage'); ?></button>
-        <button class="period-tab"><?php esc_html_e('This Month','healthbeyondage'); ?></button>
-        <button class="period-tab"><?php esc_html_e('All Time','healthbeyondage'); ?></button>
+        <a href="?period=week" class="period-tab <?php echo $period === 'week' ? 'active' : ''; ?>"><?php esc_html_e('This Week','healthbeyondage'); ?></a>
+        <a href="?period=month" class="period-tab <?php echo $period === 'month' ? 'active' : ''; ?>"><?php esc_html_e('This Month','healthbeyondage'); ?></a>
+        <a href="?period=all" class="period-tab <?php echo $period === 'all' ? 'active' : ''; ?>"><?php esc_html_e('All Time','healthbeyondage'); ?></a>
     </div>
 
     <!-- Top 1 + stack 2–5 -->
@@ -123,13 +144,13 @@ if ( $trending->have_posts() ) {
     </div>
     <div class="art-grid">
         <?php
-        $more_ids = array_slice($posts_arr, 5, 3);
+        $more_ids = array_slice($posts_arr, 5, 9);
         foreach ( $more_ids as $pid ) {
             hba_article_card($pid);
         }
         // If not enough trending, fill with recent
-        if ( count($more_ids) < 3 ) {
-            $fill = new WP_Query(['posts_per_page' => 3 - count($more_ids), 'post__not_in' => $posts_arr, 'post_status' => 'publish']);
+        if ( count($more_ids) < 9 ) {
+            $fill = new WP_Query(['posts_per_page' => 9 - count($more_ids), 'post__not_in' => $posts_arr, 'post_status' => 'publish']);
             while ($fill->have_posts()) { $fill->the_post(); hba_article_card(get_the_ID()); }
             wp_reset_postdata();
         }
