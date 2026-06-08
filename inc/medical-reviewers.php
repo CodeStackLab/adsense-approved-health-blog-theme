@@ -105,7 +105,7 @@ function hba_reviewer_meta_box_html( $post ) {
     echo '</label></strong></p>';
 
     echo '<select id="hba_reviewer_field" name="hba_reviewer_field" style="width:100%; max-width:100%; box-sizing:border-box; padding:4px 8px; border-radius:4px; border:1px solid #8c8f94; min-height:32px;">';
-    echo '<option value="">' . __( '— Select Reviewer (or use global setting) —', 'healthbeyondage' ) . '</option>';
+    echo '<option value="">' . __( '— Select Reviewer... —', 'healthbeyondage' ) . '</option>';
     
     if ( $reviewers ) {
         foreach ( $reviewers as $rev ) {
