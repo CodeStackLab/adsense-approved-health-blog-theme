@@ -53,7 +53,7 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
         <div class="home-hero-right fade-up" style="display:flex;align-items:center;justify-content:center;position:relative">
             <div style="position:relative;width:100%;max-width:580px;margin:0 auto;">
                 <?php if ( $hero_image ) : ?>
-                    <img class="hero-photo" src="<?php echo esc_url( $hero_image ); ?>" alt="<?php esc_attr_e( 'Health Beyond Age', 'healthbeyondage' ); ?>" style="width:100%;height:340px;object-fit:cover;object-position:center top;border-radius:16px;display:block;box-shadow:0 12px 40px rgba(13,107,82,0.15)" />
+                    <img class="hero-photo" src="<?php echo esc_url( $hero_image ); ?>" alt="<?php esc_attr_e( 'Health Beyond Age', 'healthbeyondage' ); ?>" style="width:100%;height:420px;object-fit:cover;object-position:center top;border-radius:16px;display:block;box-shadow:0 12px 40px rgba(13,107,82,0.15)" />
                 <?php endif; ?>
                 <div class="home-medrev-card">
                     <div class="mrc-avatar">
