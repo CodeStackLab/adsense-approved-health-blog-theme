@@ -241,9 +241,21 @@ ul { list-style: none; }
 .page-hdr { background: var(--g1); padding: 3.5rem 1.5rem 3rem; text-align: center; }
 .page-hdr .eyebrow { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--g-light); font-weight: 600; margin-bottom: .6rem; }
 .page-hdr h1 { font-family: var(--serif); font-size: clamp(1.8rem,3vw,2.8rem); color: #fff; font-weight: 700; margin-bottom: .75rem; }
-.page-hdr p { font-size: .92rem; color: rgba(255,255,255,.6); max-width: 540px; margin: 0 auto; font-weight: 300; line-height: 1.75; }
+.page-hdr p { font-size: .92rem; color: rgba(255,255,255,.75); max-width: 600px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; }
 
-/* ========== TRENDING PAGE ========== */
+/* ========== AUTHOR HERO ========== */
+.author-hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 4rem 1.5rem; text-align: left; }
+.author-hero-inner { max-width: 800px; margin: 0 auto; display: flex; align-items: center; gap: 2.5rem; }
+.author-hero-av { width: 140px; height: 140px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.15); overflow: hidden; flex-shrink: 0; box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+.author-hero-av img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.author-hero-cnt .eyebrow { margin-bottom: .5rem; }
+.author-hero-cnt h1 { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: .25rem; }
+.author-role { font-size: .95rem; font-weight: 600; color: var(--g1); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1.25rem; }
+.author-bio { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,.8); margin-bottom: 1.5rem; }
+.author-stats { display: flex; align-items: center; gap: 1.5rem; }
+.author-stats span { font-size: .85rem; font-weight: 600; color: #fff; background: rgba(255,255,255,0.1); padding: .4rem .8rem; border-radius: 6px; }
+
+/* ========== ARCHIVE LIST ========== */
 .trending-hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
 .trend-main { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; cursor: pointer; }
 .trend-main-img { height: 260px; background: var(--g-pale); display: flex; align-items: center; justify-content: center; font-size: 5rem; position: relative; border-bottom: 1px solid var(--border); overflow: hidden; }
@@ -476,6 +488,10 @@ ul { list-style: none; }
   .medrev-bar { flex-direction: column; align-items: flex-start; }
   .home-medrev-card { bottom: 0; left: 1rem; right: 1rem; max-width: none; flex-direction: column; text-align: center; padding: 1.5rem; }
   .home-trust-row { justify-content: center; }
+  .author-hero-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
+  .author-hero { padding: 3rem 1.5rem; }
+  .author-hero-cnt h1 { font-size: 2rem; }
+  .author-stats { justify-content: center; }
   #page-nav { bottom: 20px; right: 10px; max-width: 150px; padding: 0.5rem; }
   #page-nav summary { font-size: 0.65rem; }
 }
