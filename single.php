@@ -32,8 +32,8 @@ if ( $cpt_reviewer_id ) {
     $rev_post = get_post( $cpt_reviewer_id );
     if ( $rev_post && $rev_post->post_status === 'publish' ) {
         $reviewer_name = $rev_post->post_title;
-        $reviewer_role = $rev_post->post_excerpt; // Excerpt is used for role
-        $reviewer_bio  = $rev_post->post_content;
+        $reviewer_role = get_post_meta( $cpt_reviewer_id, '_hba_reviewer_role', true ) ?: $rev_post->post_excerpt;
+        $reviewer_bio  = get_post_meta( $cpt_reviewer_id, '_hba_reviewer_bio', true ) ?: $rev_post->post_content;
         $reviewer_img  = get_the_post_thumbnail_url( $cpt_reviewer_id, 'thumbnail' );
         $reviewer_link = get_permalink( $cpt_reviewer_id );
     }

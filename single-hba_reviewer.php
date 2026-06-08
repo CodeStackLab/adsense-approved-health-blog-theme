@@ -6,8 +6,8 @@ get_header();
 
 if ( have_posts() ) : while ( have_posts() ) : the_post();
     $name = get_the_title();
-    $role = get_the_excerpt();
-    $bio  = get_the_content();
+    $role = get_post_meta( get_the_ID(), '_hba_reviewer_role', true ) ?: get_the_excerpt();
+    $bio  = get_post_meta( get_the_ID(), '_hba_reviewer_bio', true ) ?: get_the_content();
     $img  = get_the_post_thumbnail_url( get_the_ID(), 'large' ) ?: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80';
 ?>
 
