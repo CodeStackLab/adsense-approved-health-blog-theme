@@ -450,6 +450,16 @@ ul { list-style: none; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp .5s ease both; }
 
+/* Live Search Results Dropdown */
+.live-search-results { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: .5rem; z-index: 100; display: none; overflow: hidden; border: 1px solid var(--border); }
+.ls-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; text-decoration: none; border-bottom: 1px solid var(--border); transition: background .15s; }
+.ls-item:last-child { border-bottom: none; }
+.ls-item:hover { background: var(--off); }
+.ls-thumb { width: 40px; height: 40px; border-radius: 6px; overflow: hidden; flex-shrink: 0; background: var(--off); }
+.ls-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.ls-text h4 { font-size: .85rem; font-weight: 600; color: var(--text); margin: 0; line-height: 1.3; }
+.ls-empty { padding: 1rem; font-size: .9rem; color: var(--mid); text-align: center; }
+
 /* ========== RESPONSIVE ========== */
 @media(max-width: 1024px) {
   .home-hero-wrap { grid-template-columns: 1fr; min-height: auto; }

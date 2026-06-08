@@ -118,7 +118,7 @@
     });
   }
 
-  function initFadeUp() {
+    function initFadeUp() {
     if (!('IntersectionObserver' in window)) return;
     const items = document.querySelectorAll('.art-card, .art-list-item, .featured-longread, .trend-item, .trend-main');
     const io = new IntersectionObserver(function(entries) {
@@ -131,4 +131,54 @@
     }, { threshold: 0.1 });
     items.forEach(function(item) { io.observe(item); });
   }
+
+  // Live Search Auto-suggest
+  function initLiveSearch() {
+    const searchInputs = document.querySelectorAll('input[type="search"]');
+    searchInputs.forEach(function(input) {
+      const form = input.closest('form');
+      if (!form) return;
+      
+      const resultsDiv = document.createElement('div');
+      resultsDiv.className = 'live-search-results';
+      form.appendChild(resultsDiv);
+      form.style.position = 'relative';
+      
+      let timeout = null;
+      input.addEventListener('input', function() {
+        clearTimeout(timeout);
+        const val = this.value.trim();
+        if (val.length < 2) {
+          resultsDiv.style.display = 'none';
+          return;
+        }
+        timeout = setTimeout(function() {
+          if (typeof hbaData === 'undefined' || !hbaData.ajaxUrl) return;
+          fetch( hbaData.ajaxUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'action=hba_live_search&query=' + encodeURIComponent(val)
+          })
+          .then(res => res.text())
+          .then(html => {
+            if (html.trim()) {
+              resultsDiv.innerHTML = html;
+              resultsDiv.style.display = 'block';
+            } else {
+              resultsDiv.style.display = 'none';
+            }
+          });
+        }, 300);
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!form.contains(e.target)) {
+          resultsDiv.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Init live search
+  initLiveSearch();
 })();

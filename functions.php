@@ -57,8 +57,42 @@ function hba_enqueue_assets() {
 
     // Main JS
     wp_enqueue_script( 'hba-main', HBA_URI . '/assets/js/main.js', [], HBA_VERSION, true );
+    wp_localize_script( 'hba-main', 'hbaData', [
+        'ajaxUrl' => admin_url( 'admin-ajax.php' )
+    ] );
 }
 add_action( 'wp_enqueue_scripts', 'hba_enqueue_assets' );
+
+/* ============================================================
+   3. LIVE SEARCH AJAX HANDLER
+   ============================================================ */
+add_action( 'wp_ajax_hba_live_search', 'hba_live_search_handler' );
+add_action( 'wp_ajax_nopriv_hba_live_search', 'hba_live_search_handler' );
+function hba_live_search_handler() {
+    $term = isset($_POST['query']) ? sanitize_text_field( $_POST['query'] ) : '';
+    if ( empty( $term ) ) wp_die();
+
+    $q = new WP_Query([
+        's'              => $term,
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'posts_per_page' => 5
+    ]);
+
+    if ( $q->have_posts() ) {
+        while ( $q->have_posts() ) { 
+            $q->the_post();
+            $thumb = get_the_post_thumbnail( get_the_ID(), 'thumbnail' ) ?: '<img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=100&q=80" alt="Placeholder" style="width:100%;height:100%;object-fit:cover;">';
+            echo '<a href="' . esc_url( get_permalink() ) . '" class="ls-item">';
+            echo '<div class="ls-thumb">' . $thumb . '</div>';
+            echo '<div class="ls-text"><h4 style="margin:0;font-size:.85rem;">' . esc_html( get_the_title() ) . '</h4></div>';
+            echo '</a>';
+        }
+    } else {
+        echo '<div class="ls-empty" style="padding:1rem;color:var(--mid);text-align:center;">' . esc_html__('No articles found.', 'healthbeyondage') . '</div>';
+    }
+    wp_die();
+}
 
 /* ============================================================
    3. DYNAMIC CUSTOMIZER CSS OUTPUT
