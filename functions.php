@@ -6,7 +6,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'HBA_VERSION', '1.0.0' );
+define( 'HBA_VERSION', time() );
 define( 'HBA_DIR', get_template_directory() );
 define( 'HBA_URI', get_template_directory_uri() );
 
