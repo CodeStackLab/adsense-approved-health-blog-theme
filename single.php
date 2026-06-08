@@ -80,13 +80,13 @@ $tags = get_the_tags();
         <!-- Byline -->
         <?php if ( get_theme_mod( 'hba_sp_show_byline', true ) ) : ?>
         <div class="article-byline">
-            <div class="byline-author">
+            <a href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" class="byline-author" title="<?php echo esc_attr( sprintf( __( 'View all posts by %s', 'healthbeyondage' ), $author ) ); ?>">
                 <div class="byline-av"><?php echo esc_html( $initials ); ?></div>
                 <div>
                     <div class="byline-name"><?php echo esc_html( $author ); ?></div>
                     <div class="byline-cred"><?php echo esc_html( get_the_author_meta('user_description', $author_id) ?: 'Health Writer' ); ?></div>
                 </div>
-            </div>
+            </a>
             <div class="byline-sep"></div>
             <div class="byline-info"><strong><?php esc_html_e('Published:','healthbeyondage'); ?></strong> <?php echo get_the_date(); ?></div>
             <div class="byline-sep"></div>

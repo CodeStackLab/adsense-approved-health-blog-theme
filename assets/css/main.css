@@ -310,7 +310,8 @@ ul { list-style: none; }
 .article-cat { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--g2); margin-bottom: .65rem; }
 .article-main h1 { font-family: var(--serif); font-size: clamp(1.6rem,2.5vw,2.2rem); color: var(--text); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; }
 .article-byline { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.75rem; flex-wrap: wrap; }
-.byline-author { display: flex; align-items: center; gap: .6rem; }
+.byline-author { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: inherit; transition: color .15s; }
+.byline-author:hover .byline-name { color: var(--g1); }
 .byline-av { width: 38px; height: 38px; border-radius: 50%; background: var(--g-pale); display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 700; color: var(--g1); border: 2px solid var(--g-light); overflow: hidden; }
 .byline-av img { width: 100%; height: 100%; object-fit: cover; }
 .byline-name { font-size: .8rem; font-weight: 600; color: var(--text); }
