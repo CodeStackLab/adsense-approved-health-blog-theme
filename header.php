@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php if ( get_theme_mod( 'hba_show_ann_bar', true ) ) hba_announcement_bar(); ?>
+
 
 <nav class="main-nav" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'healthbeyondage' ); ?>">
     <div class="nav-wrap">

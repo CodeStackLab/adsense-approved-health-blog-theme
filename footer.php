@@ -103,7 +103,7 @@
 
         <div class="foot-bottom">
             <span class="foot-copy"><?php echo esc_html( get_theme_mod( 'hba_footer_copyright', '© ' . date('Y') . ' Health Beyond Age. All rights reserved.' ) ); ?></span>
-            <div class="med-pill">✓ <?php esc_html_e( 'All Content Medically Reviewed', 'healthbeyondage' ); ?></div>
+
         </div>
     </div>
 </footer>
