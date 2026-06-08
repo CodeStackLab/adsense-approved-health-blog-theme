@@ -20,8 +20,33 @@ $author_bio = get_the_author_meta('description');
 $initials  = hba_author_initials( $author_id );
 $read_time = hba_reading_time( get_the_ID() );
 $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'hba-featured' );
-$reviewer  = get_post_meta( get_the_ID(), 'hba_reviewer_name', true ) ?: 'Dr. Sarah Matheson, MBChB, MRCGP';
-$reviewer_role = get_post_meta( get_the_ID(), 'hba_reviewer_role', true ) ?: 'Lead Medical Reviewer';
+// Medical Reviewer Logic
+$cpt_reviewer_id = get_post_meta( get_the_ID(), '_hba_reviewer_id', true );
+$reviewer_name = '';
+$reviewer_role = '';
+$reviewer_bio  = '';
+$reviewer_img  = '';
+$reviewer_link = '';
+
+if ( $cpt_reviewer_id ) {
+    $rev_post = get_post( $cpt_reviewer_id );
+    if ( $rev_post && $rev_post->post_status === 'publish' ) {
+        $reviewer_name = $rev_post->post_title;
+        $reviewer_role = $rev_post->post_excerpt; // Excerpt is used for role
+        $reviewer_bio  = $rev_post->post_content;
+        $reviewer_img  = get_the_post_thumbnail_url( $cpt_reviewer_id, 'thumbnail' );
+        $reviewer_link = get_permalink( $cpt_reviewer_id );
+    }
+}
+
+// Fallback if no specific reviewer is selected
+if ( empty( $reviewer_name ) ) {
+    $reviewer_name = get_post_meta( get_the_ID(), 'hba_reviewer_name', true ) ?: get_theme_mod( 'hba_expert_name', 'Dr. Sarah Matheson, MBChB, MRCGP' );
+    $reviewer_role = get_post_meta( get_the_ID(), 'hba_reviewer_role', true ) ?: get_theme_mod( 'hba_expert_role', 'Lead Medical Reviewer' );
+    $reviewer_bio  = get_theme_mod( 'hba_expert_bio', '18 years of clinical experience in general practice, specialising in preventive medicine and healthy aging.' );
+    $reviewer_img  = get_theme_mod( 'hba_expert_photo', 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&q=80' );
+    $reviewer_link = home_url('/team');
+}
 
 // Build TOC from H2 headings in content
 $content  = get_the_content();
@@ -76,7 +101,7 @@ $tags = get_the_tags();
         <div class="medrev-bar">
             <div style="font-size:1.2rem">🩺</div>
             <p>
-                <strong><?php printf( esc_html__( 'Medically reviewed by %s.', 'healthbeyondage' ), esc_html( $reviewer ) ); ?></strong>
+                <strong><?php printf( esc_html__( 'Medically reviewed by %s.', 'healthbeyondage' ), esc_html( $reviewer_name ) ); ?></strong>
                 <?php printf( esc_html__( ' This article has been reviewed for accuracy by a qualified medical professional. Last reviewed: %s.', 'healthbeyondage' ), get_the_modified_date('F Y') ); ?>
                 <a href="<?php echo esc_url( home_url('/team') ); ?>"><?php esc_html_e( 'Learn about our review process.', 'healthbeyondage' ); ?></a>
             </p>
@@ -167,11 +192,19 @@ $tags = get_the_tags();
         <div class="sidebar-card">
             <div class="sidebar-card-hd">🩺 <?php esc_html_e( 'Reviewed By', 'healthbeyondage' ); ?></div>
             <div class="reviewer-card">
-                <div class="photo" style="width:60px;height:60px;border-radius:50%;background:var(--g-pale);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto .6rem;border:2px solid var(--g-light);">👩‍⚕️</div>
-                <h4><?php echo esc_html( $reviewer ); ?></h4>
+                <?php if ( $reviewer_img ) : ?>
+                    <div class="photo" style="width:60px;height:60px;border-radius:50%;background:var(--g-pale);display:flex;align-items:center;justify-content:center;margin:0 auto .6rem;border:2px solid var(--g-light);overflow:hidden;">
+                        <img src="<?php echo esc_url( $reviewer_img ); ?>" alt="<?php echo esc_attr( $reviewer_name ); ?>" style="width:100%;height:100%;object-fit:cover;" />
+                    </div>
+                <?php else : ?>
+                    <div class="photo" style="width:60px;height:60px;border-radius:50%;background:var(--g-pale);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto .6rem;border:2px solid var(--g-light);">👩‍⚕️</div>
+                <?php endif; ?>
+                <h4><?php echo esc_html( $reviewer_name ); ?></h4>
                 <div class="role"><?php echo esc_html( $reviewer_role ); ?></div>
-                <p><?php esc_html_e( '18 years of clinical experience in general practice, specialising in preventive medicine and healthy aging.', 'healthbeyondage' ); ?></p>
-                <a href="<?php echo esc_url( home_url('/team') ); ?>" style="display:block;margin-top:.75rem;font-size:.75rem;color:var(--g1);font-weight:600;"><?php esc_html_e('View full profile →','healthbeyondage'); ?></a>
+                <?php if ( $reviewer_bio ) : ?>
+                    <p><?php echo wp_kses_post( wp_trim_words( wp_strip_all_tags($reviewer_bio), 20 ) ); ?></p>
+                <?php endif; ?>
+                <a href="<?php echo esc_url( $reviewer_link ); ?>" style="display:block;margin-top:.75rem;font-size:.75rem;color:var(--g1);font-weight:600;"><?php esc_html_e('View full profile →','healthbeyondage'); ?></a>
             </div>
         </div>
 

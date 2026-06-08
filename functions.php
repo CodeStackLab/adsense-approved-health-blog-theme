@@ -372,3 +372,8 @@ function hba_seo_meta() {
     }
 }
 add_action( 'wp_head', 'hba_seo_meta' );
+
+/* ============================================================
+   10. INCLUDES
+   ============================================================ */
+require get_template_directory() . '/inc/medical-reviewers.php';
