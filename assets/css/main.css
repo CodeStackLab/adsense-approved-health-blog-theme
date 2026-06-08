@@ -438,7 +438,7 @@ ul { list-style: none; }
   .trending-hero-grid { grid-template-columns: 1fr; }
   .featured-longread { grid-template-columns: 1fr; }
   .fl-thumb { height: 220px; }
-  .site-footer { padding: 4.5rem 1.5rem 2.5rem; }
+  .site-footer { padding: 4.5rem 1.5rem 6rem; }
   .foot-top { grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
   .foot-top > div:first-child { grid-column: 1 / -1; }
   .foot-col h5 { font-size: 1.1rem; margin-bottom: 0.8rem; }
@@ -458,7 +458,7 @@ ul { list-style: none; }
   .medrev-bar { flex-direction: column; align-items: flex-start; }
   .home-medrev-card { bottom: 0; left: 1rem; right: 1rem; max-width: none; flex-direction: column; text-align: center; padding: 1.5rem; }
   .home-trust-row { justify-content: center; }
-  #page-nav { bottom: 130px; right: 10px; max-width: 150px; padding: 0.5rem; }
+  #page-nav { bottom: 20px; right: 10px; max-width: 150px; padding: 0.5rem; }
   #page-nav summary { font-size: 0.65rem; }
 }
 @media(max-width: 480px) {
@@ -467,8 +467,6 @@ ul { list-style: none; }
   .home-ctas { flex-direction: column; align-items: flex-start; }
   .nl-form { flex-direction: column; }
   .period-tabs { flex-wrap: wrap; }
-  #page-nav { bottom: 130px; right: 10px; max-width: 150px; padding: 0.5rem; }
-  #page-nav summary { font-size: 0.65rem; }
 }
 
 /* ===================== BROWSE PAGES ===================== */
