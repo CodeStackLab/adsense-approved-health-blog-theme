@@ -53,10 +53,28 @@ $content  = get_the_content();
 preg_match_all( '/<h2[^>]*>(.*?)<\/h2>/i', $content, $headings );
 $toc = $headings[1] ?? [];
 
-// Process content — add IDs to H2s
-$processed_content = preg_replace_callback( '/<h2([^>]*)>(.*?)<\/h2>/i', function($m) {
+// Process content — add IDs to H2s, and inject mobile TOC before the first H2
+$h2_count = 0;
+$mobile_toc_html = '';
+if ( ! empty( $toc ) ) {
+    $mobile_toc_html .= '<div class="mobile-toc">';
+    $mobile_toc_html .= '<div class="mobile-toc-hd">📋 ' . esc_html__( 'Table of Contents', 'healthbeyondage' ) . '</div>';
+    $mobile_toc_html .= '<ul class="toc-list">';
+    foreach ( $toc as $heading ) {
+        $id = sanitize_title( wp_strip_all_tags( $heading ) );
+        $mobile_toc_html .= '<li><a href="#' . esc_attr($id) . '">' . esc_html( wp_strip_all_tags($heading) ) . '</a></li>';
+    }
+    $mobile_toc_html .= '</ul></div>';
+}
+
+$processed_content = preg_replace_callback( '/<h2([^>]*)>(.*?)<\/h2>/i', function($m) use (&$h2_count, $mobile_toc_html) {
+    $h2_count++;
     $id = sanitize_title( wp_strip_all_tags( $m[2] ) );
-    return "<h2{$m[1]} id=\"{$id}\">{$m[2]}</h2>";
+    $h2_tag = "<h2{$m[1]} id=\"{$id}\">{$m[2]}</h2>";
+    if ( $h2_count === 1 && ! empty( $mobile_toc_html ) ) {
+        return $mobile_toc_html . $h2_tag;
+    }
+    return $h2_tag;
 }, apply_filters( 'the_content', $content ) );
 
 $tags = get_the_tags();
@@ -174,7 +192,7 @@ $tags = get_the_tags();
 
         <!-- Table of Contents -->
         <?php if ( ! empty( $toc ) ) : ?>
-        <div class="sidebar-card">
+        <div class="sidebar-card sidebar-toc-card">
             <div class="sidebar-card-hd">📋 <?php esc_html_e( 'Table of Contents', 'healthbeyondage' ); ?></div>
             <div class="sidebar-card-body">
                 <ul class="toc-list">
