@@ -458,6 +458,8 @@ ul { list-style: none; }
   .medrev-bar { flex-direction: column; align-items: flex-start; }
   .home-medrev-card { bottom: 0; left: 1rem; right: 1rem; max-width: none; flex-direction: column; text-align: center; padding: 1.5rem; }
   .home-trust-row { justify-content: center; }
+  #page-nav { bottom: 130px; right: 10px; max-width: 150px; padding: 0.5rem; }
+  #page-nav summary { font-size: 0.65rem; }
 }
 @media(max-width: 480px) {
   .art-grid { grid-template-columns: 1fr; }
@@ -465,7 +467,7 @@ ul { list-style: none; }
   .home-ctas { flex-direction: column; align-items: flex-start; }
   .nl-form { flex-direction: column; }
   .period-tabs { flex-wrap: wrap; }
-  #page-nav { bottom: 80px; right: 10px; max-width: 150px; padding: 0.5rem; }
+  #page-nav { bottom: 130px; right: 10px; max-width: 150px; padding: 0.5rem; }
   #page-nav summary { font-size: 0.65rem; }
 }
 
