@@ -11,7 +11,6 @@
     <div class="trust-metrics-inner">
         <?php
         $defaults = [
-            ['150+','Expert Articles'],
             ['5','Health Categories'],
             ['100%','Medically Reviewed'],
             ['Since 2021','Publishing Since'],
@@ -108,41 +107,6 @@
     </div>
 </footer>
 
-<!-- ==================== PAGE NAVIGATION (Browse Pages) ==================== -->
-<details id="page-nav">
-  <summary>Browse Pages</summary>
-  <div id="page-nav-list">
-    <div class="pnav-section">Main</div>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/') ); ?>">🏠 Home</a>
-    
-    <div class="pnav-section">Category Pages</div>
-    <?php
-    $cat_link = function($slug) {
-        $cat = get_category_by_slug($slug);
-        return $cat ? get_category_link($cat->term_id) : '#';
-    };
-    ?>
-    <a class="pnav-btn" href="<?php echo esc_url( $cat_link('nutrition') ); ?>">🥦 Nutrition</a>
-    <a class="pnav-btn" href="<?php echo esc_url( $cat_link('mental-wellness') ); ?>">🧠 Mental Wellness</a>
-    <a class="pnav-btn" href="<?php echo esc_url( $cat_link('preventive-health') ); ?>">🩺 Preventive Health</a>
-    <a class="pnav-btn" href="<?php echo esc_url( $cat_link('fitness') ); ?>">🏋️ Fitness</a>
-    <a class="pnav-btn" href="<?php echo esc_url( $cat_link('skin-care') ); ?>">✨ Skin Care</a>
-    
-    <div class="pnav-section">Company Pages</div>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/about') ); ?>">About Us</a>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/team') ); ?>">Meet Our Team</a>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/contact') ); ?>">Contact Us</a>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/blog') ); ?>">All Articles</a>
-    <a class="pnav-btn" href="<?php echo esc_url( get_post_type_archive_link('post') ); ?>">Trending</a>
-    
-    <div class="pnav-section">Legal Pages</div>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/privacy-policy') ); ?>">Privacy Policy</a>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/terms-of-use') ); ?>">Terms of Use</a>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/medical-disclaimer') ); ?>">Medical Disclaimer</a>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/disclaimer') ); ?>">Disclaimer</a>
-    <a class="pnav-btn" href="<?php echo esc_url( home_url('/cookie-policy') ); ?>">Cookie Policy</a>
-  </div>
-</details>
 
 <?php wp_footer(); ?>
 </body>
