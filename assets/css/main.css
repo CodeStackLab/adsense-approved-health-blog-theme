@@ -252,6 +252,9 @@ ul { list-style: none; }
 .author-hero-cnt h1 { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: .25rem; }
 .author-role { font-size: .95rem; font-weight: 600; color: var(--g1); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1.25rem; }
 .author-bio { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,.8); margin-bottom: 1.5rem; }
+.author-links { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.author-links a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); color: #fff; border-radius: 50%; font-size: 1rem; transition: all 0.2s; text-decoration: none; }
+.author-links a:hover { background: var(--g1); transform: translateY(-2px); }
 .author-stats { display: flex; align-items: center; gap: 1.5rem; }
 .author-stats span { font-size: .85rem; font-weight: 600; color: #fff; background: rgba(255,255,255,0.1); padding: .4rem .8rem; border-radius: 6px; }
 
@@ -491,6 +494,7 @@ ul { list-style: none; }
   .author-hero-inner { flex-direction: column; text-align: center; gap: 1.5rem; }
   .author-hero { padding: 3rem 1.5rem; }
   .author-hero-cnt h1 { font-size: 2rem; }
+  .author-links { justify-content: center; }
   .author-stats { justify-content: center; }
   #page-nav { bottom: 20px; right: 10px; max-width: 150px; padding: 0.5rem; }
   #page-nav summary { font-size: 0.65rem; }
