@@ -6,7 +6,7 @@
 get_header();
 
 $hero_image   = get_theme_mod( 'hba_hero_image', 'http://srv1740311.hstgr.cloud/wp-content/uploads/2026/06/Image-1-d2fab5ef.png' );
-$hero_eyebrow = get_theme_mod( 'hba_hero_eyebrow', 'TRUSTED HEALTH GUIDANCE' );
+$hero_eyebrow = get_theme_mod( 'hba_hero_eyebrow', 'Evidence-Based Wellness' );
 $hero_title   = get_theme_mod( 'hba_hero_title', 'Trusted Health Guidance For A Better Life' );
 $hero_sub     = get_theme_mod( 'hba_hero_subtitle', 'Practical, Evidence-Based Wellness Advice Designed To Help You Live Healthier, Feel Stronger, And Age Confidently Every Day.' );
 $btn1_text    = get_theme_mod( 'hba_hero_btn1_text', 'Explore Health Topics' );

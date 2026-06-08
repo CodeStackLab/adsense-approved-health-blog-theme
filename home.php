@@ -1,8 +1,7 @@
 <?php
 /**
+ * Template Name: Blog
  * Home/Blog Template — All Articles Page
- * Used when Settings > Reading > "Your homepage displays > A static page"
- * and a "Posts page" is selected. Matches all-articles design.
  */
 get_header();
 ?>
