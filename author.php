@@ -32,17 +32,15 @@ $post_count = count_user_posts( $author_id );
             <?php
             // Social & Contact Links
             $user_url = get_the_author_meta('user_url', $author_id);
-            $user_email = get_the_author_meta('user_email', $author_id);
             $twitter = get_the_author_meta('twitter', $author_id);
             $facebook = get_the_author_meta('facebook', $author_id);
             $linkedin = get_the_author_meta('linkedin', $author_id);
             $instagram = get_the_author_meta('instagram', $author_id);
 
-            if ( $user_url || $user_email || $twitter || $facebook || $linkedin || $instagram ) :
+            if ( $user_url || $twitter || $facebook || $linkedin || $instagram ) :
             ?>
             <div class="author-links">
                 <?php if ( $user_url ) : ?><a href="<?php echo esc_url($user_url); ?>" target="_blank" title="Website">🌐</a><?php endif; ?>
-                <?php if ( $user_email ) : ?><a href="mailto:<?php echo esc_attr($user_email); ?>" title="Email">📧</a><?php endif; ?>
                 <?php if ( $twitter ) : ?><a href="<?php echo esc_url($twitter); ?>" target="_blank" title="Twitter">𝕏</a><?php endif; ?>
                 <?php if ( $facebook ) : ?><a href="<?php echo esc_url($facebook); ?>" target="_blank" title="Facebook">f</a><?php endif; ?>
                 <?php if ( $linkedin ) : ?><a href="<?php echo esc_url($linkedin); ?>" target="_blank" title="LinkedIn">in</a><?php endif; ?>
