@@ -467,7 +467,7 @@ ul { list-style: none; }
   .featured-longread { grid-template-columns: 1fr; }
   .fl-thumb { height: 220px; }
   .nav-wrap { height: 60px; }
-  .site-footer { padding: 2.5rem 1.5rem 6rem; }
+  .site-footer { padding: 2.5rem 1.5rem 1.5rem; }
   .foot-top { grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
   .foot-top > div:first-child { grid-column: 1 / -1; margin-bottom: 0.5rem; }
   .foot-col h5 { font-size: 0.95rem; margin-bottom: 0.5rem; }
