@@ -17,9 +17,9 @@ get_header();
 
 <div class="articles-layout">
     <div class="articles-main">
-        <div class="art-list">
+        <div class="art-grid">
             <?php if ( have_posts() ) {
-                while ( have_posts() ) { the_post(); hba_article_list_item( get_the_ID() ); }
+                while ( have_posts() ) { the_post(); hba_article_card( get_the_ID() ); }
             } else {
                 echo '<p>' . esc_html__('No posts found.','healthbeyondage') . '</p>';
             } ?>

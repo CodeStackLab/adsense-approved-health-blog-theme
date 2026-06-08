@@ -496,6 +496,7 @@ ul { list-style: none; }
   .author-hero-cnt h1 { font-size: 2rem; }
   .author-links { justify-content: center; }
   .author-stats { justify-content: center; }
+  .articles-hero { padding: 2rem 1.5rem; }
   #page-nav { bottom: 20px; right: 10px; max-width: 150px; padding: 0.5rem; }
   #page-nav summary { font-size: 0.65rem; }
 }
