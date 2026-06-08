@@ -1,0 +1,805 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "404.php",
+      "file_type": "code",
+      "source_file": "404.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "404.php",
+      "id": "404"
+    },
+    {
+      "label": "archive.php",
+      "file_type": "code",
+      "source_file": "archive.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "archive.php",
+      "id": "archive"
+    },
+    {
+      "label": "customizer-output.php",
+      "file_type": "code",
+      "source_file": "assets/css/customizer-output.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "customizer-output.php",
+      "id": "css_customizer_output"
+    },
+    {
+      "label": "customizer-preview.js",
+      "file_type": "code",
+      "source_file": "assets/js/customizer-preview.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 15,
+      "norm_label": "customizer-preview.js",
+      "id": "js_customizer_preview"
+    },
+    {
+      "label": "main.js",
+      "file_type": "code",
+      "source_file": "assets/js/main.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "main.js",
+      "id": "js_main"
+    },
+    {
+      "label": "initCarousel()",
+      "file_type": "code",
+      "source_file": "assets/js/main.js",
+      "source_location": "L34",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "initcarousel()",
+      "id": "js_main_initcarousel"
+    },
+    {
+      "label": "initFilterTags()",
+      "file_type": "code",
+      "source_file": "assets/js/main.js",
+      "source_location": "L56",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "initfiltertags()",
+      "id": "js_main_initfiltertags"
+    },
+    {
+      "label": "initPeriodTabs()",
+      "file_type": "code",
+      "source_file": "assets/js/main.js",
+      "source_location": "L66",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "initperiodtabs()",
+      "id": "js_main_initperiodtabs"
+    },
+    {
+      "label": "initShareButtons()",
+      "file_type": "code",
+      "source_file": "assets/js/main.js",
+      "source_location": "L76",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "initsharebuttons()",
+      "id": "js_main_initsharebuttons"
+    },
+    {
+      "label": "initTOCLinks()",
+      "file_type": "code",
+      "source_file": "assets/js/main.js",
+      "source_location": "L105",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "inittoclinks()",
+      "id": "js_main_inittoclinks"
+    },
+    {
+      "label": "initFadeUp()",
+      "file_type": "code",
+      "source_file": "assets/js/main.js",
+      "source_location": "L121",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "initfadeup()",
+      "id": "js_main_initfadeup"
+    },
+    {
+      "label": "category.php",
+      "file_type": "code",
+      "source_file": "category.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "category.php",
+      "id": "category"
+    },
+    {
+      "label": "footer.php",
+      "file_type": "code",
+      "source_file": "footer.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "footer.php",
+      "id": "footer"
+    },
+    {
+      "label": "front-page.php",
+      "file_type": "code",
+      "source_file": "front-page.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "front-page.php",
+      "id": "front_page"
+    },
+    {
+      "label": "functions.php",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "functions.php",
+      "id": "functions"
+    },
+    {
+      "label": "hba_setup()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_setup()",
+      "id": "functions_hba_setup"
+    },
+    {
+      "label": "hba_enqueue_assets()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "hba_enqueue_assets()",
+      "id": "functions_hba_enqueue_assets"
+    },
+    {
+      "label": "hba_get_customizer_css()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L66",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "hba_get_customizer_css()",
+      "id": "functions_hba_get_customizer_css"
+    },
+    {
+      "label": "hba_widgets_init()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L89",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_widgets_init()",
+      "id": "functions_hba_widgets_init"
+    },
+    {
+      "label": "hba_reading_time()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L127",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "hba_reading_time()",
+      "id": "functions_hba_reading_time"
+    },
+    {
+      "label": "hba_author_initials()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L137",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "hba_author_initials()",
+      "id": "functions_hba_author_initials"
+    },
+    {
+      "label": "hba_category_badge_class()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L152",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "hba_category_badge_class()",
+      "id": "functions_hba_category_badge_class"
+    },
+    {
+      "label": "hba_announcement_bar()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L167",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_announcement_bar()",
+      "id": "functions_hba_announcement_bar"
+    },
+    {
+      "label": "hba_newsletter_section()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L175",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_newsletter_section()",
+      "id": "functions_hba_newsletter_section"
+    },
+    {
+      "label": "hba_article_card()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L201",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "hba_article_card()",
+      "id": "functions_hba_article_card"
+    },
+    {
+      "label": "hba_article_list_item()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L243",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "hba_article_list_item()",
+      "id": "functions_hba_article_list_item"
+    },
+    {
+      "label": "hba_breadcrumb()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L270",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_breadcrumb()",
+      "id": "functions_hba_breadcrumb"
+    },
+    {
+      "label": "hba_count_post_views()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L311",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_count_post_views()",
+      "id": "functions_hba_count_post_views"
+    },
+    {
+      "label": "hba_get_post_views()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L318",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_get_post_views()",
+      "id": "functions_hba_get_post_views"
+    },
+    {
+      "label": "hba_pagination()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L326",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_pagination()",
+      "id": "functions_hba_pagination"
+    },
+    {
+      "label": "hba_seo_meta()",
+      "file_type": "code",
+      "source_file": "functions.php",
+      "source_location": "L349",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "hba_seo_meta()",
+      "id": "functions_hba_seo_meta"
+    },
+    {
+      "label": "header.php",
+      "file_type": "code",
+      "source_file": "header.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 12,
+      "norm_label": "header.php",
+      "id": "header"
+    },
+    {
+      "label": "home.php",
+      "file_type": "code",
+      "source_file": "home.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 13,
+      "norm_label": "home.php",
+      "id": "home"
+    },
+    {
+      "label": "admin-panel.php",
+      "file_type": "code",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "admin-panel.php",
+      "id": "inc_admin_panel"
+    },
+    {
+      "label": "hba_admin_menu()",
+      "file_type": "code",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "hba_admin_menu()",
+      "id": "inc_admin_panel_hba_admin_menu"
+    },
+    {
+      "label": "hba_save_settings()",
+      "file_type": "code",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "hba_save_settings()",
+      "id": "inc_admin_panel_hba_save_settings"
+    },
+    {
+      "label": "hba_admin_page()",
+      "file_type": "code",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L43",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "hba_admin_page()",
+      "id": "inc_admin_panel_hba_admin_page"
+    },
+    {
+      "label": "hba_homepage_admin_page()",
+      "file_type": "code",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L155",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "hba_homepage_admin_page()",
+      "id": "inc_admin_panel_hba_homepage_admin_page"
+    },
+    {
+      "label": "customizer.php",
+      "file_type": "code",
+      "source_file": "inc/customizer.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "customizer.php",
+      "id": "inc_customizer"
+    },
+    {
+      "label": "hba_customizer()",
+      "file_type": "code",
+      "source_file": "inc/customizer.php",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "hba_customizer()",
+      "id": "inc_customizer_hba_customizer"
+    },
+    {
+      "label": "hba_customizer_preview_js()",
+      "file_type": "code",
+      "source_file": "inc/customizer.php",
+      "source_location": "L240",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "hba_customizer_preview_js()",
+      "id": "inc_customizer_hba_customizer_preview_js"
+    },
+    {
+      "label": "index.php",
+      "file_type": "code",
+      "source_file": "index.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 14,
+      "norm_label": "index.php",
+      "id": "index"
+    },
+    {
+      "label": "page-trending.php",
+      "file_type": "code",
+      "source_file": "page-trending.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "page-trending.php",
+      "id": "page_trending"
+    },
+    {
+      "label": "page.php",
+      "file_type": "code",
+      "source_file": "page.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "page.php",
+      "id": "page"
+    },
+    {
+      "label": "search.php",
+      "file_type": "code",
+      "source_file": "search.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "search.php",
+      "id": "search"
+    },
+    {
+      "label": "single.php",
+      "file_type": "code",
+      "source_file": "single.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "single.php",
+      "id": "single"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/js/main.js",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_main",
+      "target": "js_main_initcarousel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/js/main.js",
+      "source_location": "L121",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_main",
+      "target": "js_main_initfadeup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/js/main.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_main",
+      "target": "js_main_initfiltertags"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/js/main.js",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_main",
+      "target": "js_main_initperiodtabs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/js/main.js",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_main",
+      "target": "js_main_initsharebuttons"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "assets/js/main.js",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_main",
+      "target": "js_main_inittoclinks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L167",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_announcement_bar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_article_card"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L243",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_article_list_item"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L137",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_author_initials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L270",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_breadcrumb"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_category_badge_class"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L311",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_count_post_views"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_enqueue_assets"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_get_customizer_css"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L318",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_get_post_views"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L175",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_newsletter_section"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L326",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_pagination"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_reading_time"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L349",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_seo_meta"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_setup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions",
+      "target": "functions_hba_widgets_init"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions_hba_enqueue_assets",
+      "target": "functions_hba_get_customizer_css"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L214",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions_hba_article_card",
+      "target": "functions_hba_reading_time"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L247",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions_hba_article_list_item",
+      "target": "functions_hba_reading_time"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L212",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions_hba_article_card",
+      "target": "functions_hba_author_initials"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "functions.php",
+      "source_location": "L210",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "functions_hba_article_card",
+      "target": "functions_hba_category_badge_class"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "inc_admin_panel",
+      "target": "inc_admin_panel_hba_admin_menu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "inc_admin_panel",
+      "target": "inc_admin_panel_hba_admin_page"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "inc_admin_panel",
+      "target": "inc_admin_panel_hba_homepage_admin_page"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "inc/admin-panel.php",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "inc_admin_panel",
+      "target": "inc_admin_panel_hba_save_settings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "inc/customizer.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "inc_customizer",
+      "target": "inc_customizer_hba_customizer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "inc/customizer.php",
+      "source_location": "L240",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "inc_customizer",
+      "target": "inc_customizer_hba_customizer_preview_js"
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,92 @@
+{
+  "404.php": {
+    "mtime": 1780914911.284947,
+    "ast_hash": "63f49b96d9edaa29ff1ccdb6f8f212e6",
+    "semantic_hash": "63f49b96d9edaa29ff1ccdb6f8f212e6"
+  },
+  "archive.php": {
+    "mtime": 1780914817.541307,
+    "ast_hash": "168d6f6470fdd4c3efb54993572344bd",
+    "semantic_hash": "168d6f6470fdd4c3efb54993572344bd"
+  },
+  "assets/css/customizer-output.php": {
+    "mtime": 1780914440.204437,
+    "ast_hash": "fd5c2001ba84618cdb66acfa1e8af142",
+    "semantic_hash": "fd5c2001ba84618cdb66acfa1e8af142"
+  },
+  "assets/js/customizer-preview.js": {
+    "mtime": 1780914927.6048894,
+    "ast_hash": "fa971fa981d3e9d0d431d3b5e18f01b8",
+    "semantic_hash": "fa971fa981d3e9d0d431d3b5e18f01b8"
+  },
+  "assets/js/main.js": {
+    "mtime": 1780914462.3364303,
+    "ast_hash": "8bd45064cee1370bc3552ea4852b8ed9",
+    "semantic_hash": "8bd45064cee1370bc3552ea4852b8ed9"
+  },
+  "category.php": {
+    "mtime": 1780914805.1123285,
+    "ast_hash": "5fd6bb2b2ff4f07e5acd1152797bdca0",
+    "semantic_hash": "5fd6bb2b2ff4f07e5acd1152797bdca0"
+  },
+  "footer.php": {
+    "mtime": 1780914677.7643661,
+    "ast_hash": "6635062d96b49dedff87b2e067363a99",
+    "semantic_hash": "6635062d96b49dedff87b2e067363a99"
+  },
+  "front-page.php": {
+    "mtime": 1780914721.3073533,
+    "ast_hash": "b3768f721eb50e26dfcc18f7566f0d05",
+    "semantic_hash": "b3768f721eb50e26dfcc18f7566f0d05"
+  },
+  "functions.php": {
+    "mtime": 1780914523.692412,
+    "ast_hash": "2739f8178ecf83a9fae4728477144c21",
+    "semantic_hash": "2739f8178ecf83a9fae4728477144c21"
+  },
+  "header.php": {
+    "mtime": 1780914651.8793738,
+    "ast_hash": "485283c024657120220f25c1fa26aa69",
+    "semantic_hash": "485283c024657120220f25c1fa26aa69"
+  },
+  "home.php": {
+    "mtime": 1780914836.6572292,
+    "ast_hash": "f24cebc092ca2173b02ef99ff6d7f4fb",
+    "semantic_hash": "f24cebc092ca2173b02ef99ff6d7f4fb"
+  },
+  "inc/admin-panel.php": {
+    "mtime": 1780914634.235379,
+    "ast_hash": "ce1f3340f946777674924ef1041cb005",
+    "semantic_hash": "ce1f3340f946777674924ef1041cb005"
+  },
+  "inc/customizer.php": {
+    "mtime": 1780914586.994393,
+    "ast_hash": "822600bdc0c7f2755966fd8d17736416",
+    "semantic_hash": "822600bdc0c7f2755966fd8d17736416"
+  },
+  "index.php": {
+    "mtime": 1780914870.3370976,
+    "ast_hash": "439ec1fba87a1f8ad4c3a057bb419789",
+    "semantic_hash": "439ec1fba87a1f8ad4c3a057bb419789"
+  },
+  "page-trending.php": {
+    "mtime": 1780914899.9149878,
+    "ast_hash": "5d62699fa26f7c365c0d55ad431ed0a0",
+    "semantic_hash": "5d62699fa26f7c365c0d55ad431ed0a0"
+  },
+  "page.php": {
+    "mtime": 1780914846.5361898,
+    "ast_hash": "2a2a11402cef037376992c9e6040f7b0",
+    "semantic_hash": "2a2a11402cef037376992c9e6040f7b0"
+  },
+  "search.php": {
+    "mtime": 1780914860.6991346,
+    "ast_hash": "851cb9786bbcc6034900f6f5b135aa0b",
+    "semantic_hash": "851cb9786bbcc6034900f6f5b135aa0b"
+  },
+  "single.php": {
+    "mtime": 1780914767.6823394,
+    "ast_hash": "5336ef1d942fe586168139d9e7b26d5d",
+    "semantic_hash": "5336ef1d942fe586168139d9e7b26d5d"
+  }
+}

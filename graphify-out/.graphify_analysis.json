@@ -1,0 +1,154 @@
+{
+  "communities": {
+    "0": [
+      "functions",
+      "functions_hba_announcement_bar",
+      "functions_hba_breadcrumb",
+      "functions_hba_count_post_views",
+      "functions_hba_get_post_views",
+      "functions_hba_newsletter_section",
+      "functions_hba_pagination",
+      "functions_hba_seo_meta",
+      "functions_hba_setup",
+      "functions_hba_widgets_init"
+    ],
+    "1": [
+      "js_main",
+      "js_main_initcarousel",
+      "js_main_initfadeup",
+      "js_main_initfiltertags",
+      "js_main_initperiodtabs",
+      "js_main_initsharebuttons",
+      "js_main_inittoclinks"
+    ],
+    "2": [
+      "functions_hba_article_card",
+      "functions_hba_article_list_item",
+      "functions_hba_author_initials",
+      "functions_hba_category_badge_class",
+      "functions_hba_reading_time"
+    ],
+    "3": [
+      "inc_admin_panel",
+      "inc_admin_panel_hba_admin_menu",
+      "inc_admin_panel_hba_admin_page",
+      "inc_admin_panel_hba_homepage_admin_page",
+      "inc_admin_panel_hba_save_settings"
+    ],
+    "4": [
+      "inc_customizer",
+      "inc_customizer_hba_customizer",
+      "inc_customizer_hba_customizer_preview_js"
+    ],
+    "5": [
+      "functions_hba_enqueue_assets",
+      "functions_hba_get_customizer_css"
+    ],
+    "6": [
+      "404"
+    ],
+    "7": [
+      "archive"
+    ],
+    "8": [
+      "category"
+    ],
+    "9": [
+      "css_customizer_output"
+    ],
+    "10": [
+      "footer"
+    ],
+    "11": [
+      "front_page"
+    ],
+    "12": [
+      "header"
+    ],
+    "13": [
+      "home"
+    ],
+    "14": [
+      "index"
+    ],
+    "15": [
+      "js_customizer_preview"
+    ],
+    "16": [
+      "page"
+    ],
+    "17": [
+      "page_trending"
+    ],
+    "18": [
+      "search"
+    ],
+    "19": [
+      "single"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2,
+    "1": 0.2857142857142857,
+    "2": 0.4,
+    "3": 0.4,
+    "4": 0.6666666666666666,
+    "5": 1.0,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0
+  },
+  "gods": [
+    {
+      "id": "functions_hba_article_card",
+      "label": "hba_article_card()",
+      "degree": 4
+    },
+    {
+      "id": "functions_hba_reading_time",
+      "label": "hba_reading_time()",
+      "degree": 3
+    },
+    {
+      "id": "functions_hba_enqueue_assets",
+      "label": "hba_enqueue_assets()",
+      "degree": 2
+    },
+    {
+      "id": "functions_hba_get_customizer_css",
+      "label": "hba_get_customizer_css()",
+      "degree": 2
+    },
+    {
+      "id": "functions_hba_author_initials",
+      "label": "hba_author_initials()",
+      "degree": 2
+    },
+    {
+      "id": "functions_hba_category_badge_class",
+      "label": "hba_category_badge_class()",
+      "degree": 2
+    },
+    {
+      "id": "functions_hba_article_list_item",
+      "label": "hba_article_list_item()",
+      "degree": 2
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
