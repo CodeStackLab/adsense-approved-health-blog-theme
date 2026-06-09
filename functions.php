@@ -412,3 +412,4 @@ add_action( 'wp_head', 'hba_seo_meta' );
    ============================================================ */
 require get_template_directory() . '/inc/medical-reviewers.php';
 require get_template_directory() . '/inc/team-members.php';
+require get_template_directory() . '/inc/health-topics.php';
