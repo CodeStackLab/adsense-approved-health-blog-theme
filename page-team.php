@@ -34,11 +34,14 @@ get_header();
               ?>
               <div class="team-member-card fade-up">
                 <div class="team-member-photo">
-                  <?php if ( has_post_thumbnail() ) {
-                      the_post_thumbnail('medium');
+                  <?php 
+                  $thumb_id = get_post_meta( get_the_ID(), '_thumbnail_id', true );
+                  if ( $thumb_id ) {
+                      echo wp_get_attachment_image( $thumb_id, 'large', false, array( 'style' => 'width:100%; height:100%; object-fit:cover;' ) );
                   } else {
-                      echo '<img src="https://via.placeholder.com/300" alt="Placeholder"/>';
-                  } ?>
+                      echo '<img src="https://via.placeholder.com/600x600" alt="Placeholder"/>';
+                  } 
+                  ?>
                 </div>
                 <div class="team-member-body">
                   <?php if ( $role ) : ?>
