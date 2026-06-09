@@ -60,11 +60,11 @@ get_header(); ?>
         <div class="label">By the Numbers</div>
         <h2>Health Beyond Age in 2026</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:800px;margin:0 auto" class="fade-up">
-        <div><div style="font-family:var(--serif);font-size:2.5rem;color:var(--g1);font-weight:700;line-height:1">150+</div><div style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Expert Articles</div></div>
-        <div><div style="font-family:var(--serif);font-size:2.5rem;color:var(--g1);font-weight:700;line-height:1">5</div><div style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Health Categories</div></div>
-        <div><div style="font-family:var(--serif);font-size:2.5rem;color:var(--g1);font-weight:700;line-height:1">100%</div><div style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Medically Reviewed</div></div>
-        <div><div style="font-family:var(--serif);font-size:2.5rem;color:var(--g1);font-weight:700;line-height:1">2021</div><div style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Publishing Since</div></div>
+      <div class="about-stats-grid fade-up">
+        <div class="stat-item"><div class="stat-num">150+</div><div class="stat-lbl">Expert Articles</div></div>
+        <div class="stat-item"><div class="stat-num">5</div><div class="stat-lbl">Health Categories</div></div>
+        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Medically Reviewed</div></div>
+        <div class="stat-item"><div class="stat-num">2021</div><div class="stat-lbl">Publishing Since</div></div>
       </div>
     </div>
   </div>
