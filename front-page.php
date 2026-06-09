@@ -33,6 +33,10 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
 .home-hero p.home-hero-subtitle { color: <?php echo esc_html($h_sc); ?> !important; font-size: <?php echo esc_html($h_ss); ?>rem !important; }
 .section.bg-pale { background: <?php echo esc_html($f_bg); ?> !important; }
 .nl-section { background: linear-gradient(155deg, <?php echo esc_html($n_bg); ?> 0%, #074030 100%) !important; }
+@media (max-width: 768px) {
+    .home-hero h1 { font-size: clamp(2rem, 8vw, <?php echo esc_html($h_ts); ?>rem) !important; line-height: 1.2 !important; }
+    .home-hero p.home-hero-subtitle { font-size: 1.05rem !important; }
+}
 </style>
 
 <!-- ===== HOMEPAGE HERO ===== -->
