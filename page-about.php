@@ -69,7 +69,7 @@ get_header(); ?>
     </div>
   </div>
 
-  <?php hba_newsletter_section('✦ Join our community', 'Stay Ahead of Your Health', 'Expert-curated wellness insights, the latest research, and practical tips — delivered every Friday. No noise, no spam.'); ?>
+
 
 </div>
 
