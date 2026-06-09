@@ -287,6 +287,15 @@ function hba_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'hba_footer_about',     [ 'default' => 'Evidence-based health information to help you make informed choices and live a longer, healthier life.', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
     $wp_customize->add_control( 'hba_footer_about',     [ 'label' => 'Footer About Text', 'section' => 'hba_footer', 'type' => 'textarea' ] );
 
+    $wp_customize->add_setting( 'hba_footer_col1_title',[ 'default' => 'Categories', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_footer_col1_title',[ 'label' => 'Column 1 Title', 'section' => 'hba_footer', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_footer_col2_title',[ 'default' => 'Company', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_footer_col2_title',[ 'label' => 'Column 2 Title', 'section' => 'hba_footer', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_footer_col3_title',[ 'default' => 'Legal', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_footer_col3_title',[ 'label' => 'Column 3 Title', 'section' => 'hba_footer', 'type' => 'text' ] );
+
     $wp_customize->add_setting( 'hba_footer_copyright', [ 'default' => '© ' . date('Y') . ' Health Beyond Age. All rights reserved.', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
     $wp_customize->add_control( 'hba_footer_copyright', [ 'label' => 'Copyright Text',   'section' => 'hba_footer', 'type' => 'text' ] );
 
@@ -351,11 +360,152 @@ function hba_customizer( $wp_customize ) {
     $wp_customize->add_control( 'hba_articles_per_page',   [ 'label' => 'Articles Per Page',           'section' => 'hba_layout', 'type' => 'number', 'input_attrs' => ['min' => 3, 'max' => 30] ] );
 
     /* ============================
+       SECTION: Page — About Us
+    ============================ */
+    $wp_customize->add_section( 'hba_page_about', [
+        'title'    => __( '📄 Page — About Us', 'healthbeyondage' ),
+        'panel'    => 'hba_panel',
+        'priority' => 110,
+    ] );
+
+    // Hero
+    $wp_customize->add_setting( 'hba_about_hero_tag', [ 'default' => '✦ Our Story', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_hero_tag', [ 'label' => 'Hero Tag', 'section' => 'hba_page_about', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_about_hero_title', [ 'default' => 'Health Information You Can<br/><em>Actually Trust</em>', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_hero_title', [ 'label' => 'Hero Title', 'section' => 'hba_page_about', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_about_hero_desc', [ 'default' => 'Founded in 2021, Health Beyond Age exists to cut through the noise of the wellness industry and deliver evidence-based health guidance that genuinely helps people live longer, healthier lives.', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_hero_desc', [ 'label' => 'Hero Description', 'section' => 'hba_page_about', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_about_btn1_text', [ 'default' => 'Meet Our Team', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_btn1_text', [ 'label' => 'Button 1 Text', 'section' => 'hba_page_about', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_about_btn1_url', [ 'default' => '/team', 'sanitize_callback' => 'esc_url_raw', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_btn1_url', [ 'label' => 'Button 1 URL', 'section' => 'hba_page_about', 'type' => 'url' ] );
+
+    $wp_customize->add_setting( 'hba_about_btn2_text', [ 'default' => 'Read Our Articles', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_btn2_text', [ 'label' => 'Button 2 Text', 'section' => 'hba_page_about', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_about_btn2_url', [ 'default' => '/blog', 'sanitize_callback' => 'esc_url_raw', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_btn2_url', [ 'label' => 'Button 2 URL', 'section' => 'hba_page_about', 'type' => 'url' ] );
+
+    // Mission
+    $wp_customize->add_setting( 'hba_about_mission_label', [ 'default' => 'Our Mission', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_mission_label', [ 'label' => 'Mission Label', 'section' => 'hba_page_about', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_about_mission_title', [ 'default' => 'Empowering <strong>Informed Decisions</strong> at Every Age', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_mission_title', [ 'label' => 'Mission Title', 'section' => 'hba_page_about', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_about_mission_text', [ 'default' => '<p>We believe that access to clear, accurate, and up-to-date health information is a fundamental need — not a privilege. That\'s why every article we publish is written by credentialed health professionals and reviewed by medical experts before it reaches you.</p><p>Our editorial team of doctors, registered dietitians, certified trainers, and mental health professionals ensures that what you read here reflects the current scientific consensus — not trends, not sponsored talking points.</p>', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_mission_text', [ 'label' => 'Mission Text (HTML allowed)', 'section' => 'hba_page_about', 'type' => 'textarea' ] );
+
+    // Mission Pillars
+    for ( $i = 1; $i <= 4; $i++ ) {
+        $wp_customize->add_setting( "hba_about_p{$i}_icon", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_about_p{$i}_icon", [ 'label' => "Pillar {$i} Icon (Emoji)", 'section' => 'hba_page_about', 'type' => 'text' ] );
+        $wp_customize->add_setting( "hba_about_p{$i}_title", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_about_p{$i}_title", [ 'label' => "Pillar {$i} Title", 'section' => 'hba_page_about', 'type' => 'text' ] );
+        $wp_customize->add_setting( "hba_about_p{$i}_desc", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_about_p{$i}_desc", [ 'label' => "Pillar {$i} Desc", 'section' => 'hba_page_about', 'type' => 'textarea' ] );
+    }
+
+    // Core Values
+    $wp_customize->add_setting( 'hba_about_val_label', [ 'default' => 'What We Stand For', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_val_label', [ 'label' => 'Values Label', 'section' => 'hba_page_about', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_about_val_title', [ 'default' => 'Our Core Values', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_val_title', [ 'label' => 'Values Title', 'section' => 'hba_page_about', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_about_val_desc', [ 'default' => 'The principles that guide every article, every decision, and every relationship we build with our readers.', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_about_val_desc', [ 'label' => 'Values Description', 'section' => 'hba_page_about', 'type' => 'textarea' ] );
+
+    for ( $i = 1; $i <= 6; $i++ ) {
+        $wp_customize->add_setting( "hba_about_v{$i}_icon", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_about_v{$i}_icon", [ 'label' => "Value {$i} Icon (Emoji)", 'section' => 'hba_page_about', 'type' => 'text' ] );
+        $wp_customize->add_setting( "hba_about_v{$i}_title", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_about_v{$i}_title", [ 'label' => "Value {$i} Title", 'section' => 'hba_page_about', 'type' => 'text' ] );
+        $wp_customize->add_setting( "hba_about_v{$i}_desc", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_about_v{$i}_desc", [ 'label' => "Value {$i} Desc", 'section' => 'hba_page_about', 'type' => 'textarea' ] );
+    }
+
+    /* ============================
+       SECTION: Page — Contact Us
+    ============================ */
+    $wp_customize->add_section( 'hba_page_contact', [
+        'title'    => __( '📞 Page — Contact Us', 'healthbeyondage' ),
+        'panel'    => 'hba_panel',
+        'priority' => 111,
+    ] );
+
+    // Hero
+    $wp_customize->add_setting( 'hba_contact_eyebrow', [ 'default' => 'Get In Touch', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_eyebrow', [ 'label' => 'Hero Eyebrow', 'section' => 'hba_page_contact', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_contact_title', [ 'default' => 'We\'d Love to Hear From You', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_title', [ 'label' => 'Hero Title', 'section' => 'hba_page_contact', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_contact_desc', [ 'default' => 'Have a question about our content, a correction to report, or a collaboration idea? Our team is here and ready to help.', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_desc', [ 'label' => 'Hero Description', 'section' => 'hba_page_contact', 'type' => 'textarea' ] );
+
+    // Cards
+    for ( $i = 1; $i <= 3; $i++ ) {
+        $wp_customize->add_setting( "hba_contact_c{$i}_icon", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_contact_c{$i}_icon", [ 'label' => "Card {$i} Icon (Emoji)", 'section' => 'hba_page_contact', 'type' => 'text' ] );
+        $wp_customize->add_setting( "hba_contact_c{$i}_title", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_contact_c{$i}_title", [ 'label' => "Card {$i} Title", 'section' => 'hba_page_contact', 'type' => 'text' ] );
+        $wp_customize->add_setting( "hba_contact_c{$i}_desc", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_contact_c{$i}_desc", [ 'label' => "Card {$i} Desc", 'section' => 'hba_page_contact', 'type' => 'textarea' ] );
+        $wp_customize->add_setting( "hba_contact_c{$i}_email", [ 'default' => '', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( "hba_contact_c{$i}_email", [ 'label' => "Card {$i} Email", 'section' => 'hba_page_contact', 'type' => 'text' ] );
+    }
+
+    $wp_customize->add_setting( 'hba_contact_time', [ 'default' => '⏱ We aim to respond to all enquiries within <strong>2–3 business days</strong>.', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_time', [ 'label' => 'Response Time Notice', 'section' => 'hba_page_contact', 'type' => 'textarea' ] );
+
+    // Sidebar
+    $wp_customize->add_setting( 'hba_contact_notice_title', [ 'default' => 'Important Notice', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_notice_title', [ 'label' => 'Sidebar Notice Title', 'section' => 'hba_page_contact', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_contact_notice_desc', [ 'default' => 'Health Beyond Age does not provide personalised medical advice. For health concerns, please consult a qualified healthcare professional.', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_notice_desc', [ 'label' => 'Sidebar Notice Desc', 'section' => 'hba_page_contact', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_contact_notice_link', [ 'default' => 'Read our Medical Disclaimer →', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_notice_link', [ 'label' => 'Sidebar Notice Link Text', 'section' => 'hba_page_contact', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_contact_notice_url', [ 'default' => '/medical-disclaimer', 'sanitize_callback' => 'esc_url_raw', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_contact_notice_url', [ 'label' => 'Sidebar Notice Link URL', 'section' => 'hba_page_contact', 'type' => 'url' ] );
+
+    /* ============================
+       SECTION: Page — Team
+    ============================ */
+    $wp_customize->add_section( 'hba_page_team', [
+        'title'    => __( '👥 Page — Team', 'healthbeyondage' ),
+        'panel'    => 'hba_panel',
+        'priority' => 112,
+    ] );
+
+    $wp_customize->add_setting( 'hba_team_label', [ 'default' => 'Our Experts', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_team_label', [ 'label' => 'Hero Label', 'section' => 'hba_page_team', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_team_title', [ 'default' => 'Meet the Team Behind<br/>Health Beyond Age', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_team_title', [ 'label' => 'Hero Title', 'section' => 'hba_page_team', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_team_desc', [ 'default' => 'Every article on this site is shaped by credentialed health professionals &mdash; doctors, dietitians, trainers, and researchers committed to accuracy and your wellbeing.', 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_team_desc', [ 'label' => 'Hero Description', 'section' => 'hba_page_team', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_team_grid_title', [ 'default' => 'Medical Reviewers & Editorial Team', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_team_grid_title', [ 'label' => 'Grid Title', 'section' => 'hba_page_team', 'type' => 'text' ] );
+
+    /* ============================
        SELECTIVE REFRESH PARTIALS
        (Pencil icons on front-page)
     ============================ */
     if ( isset( $wp_customize->selective_refresh ) ) {
         $partials = [
+            // Header
+            'hba_logo'                  => '.logo-img',
+            'hba_nav_cta_text'          => '.nav-right .btn-green',
             // Hero
             'hba_hero_eyebrow'          => '.home-eyebrow',
             'hba_hero_title'            => '.home-hero h1',
@@ -387,7 +537,59 @@ function hba_customizer( $wp_customize ) {
             'hba_nl_perk_3'             => '.nl-perks .nl-perk:nth-child(3)',
             // Announcement bar
             'hba_ann_bar_text'          => '.ann-bar',
+            // Footer
+            'hba_footer_about'          => '.foot-about',
+            'hba_footer_copyright'      => '.foot-copy',
+            'hba_footer_col1_title'     => '.foot-col:nth-of-type(1) h5',
+            'hba_footer_col2_title'     => '.foot-col:nth-of-type(2) h5',
+            'hba_footer_col3_title'     => '.foot-col:nth-of-type(3) h5',
+            // About Us
+            'hba_about_hero_tag'        => '.about-hero-inner .about-tag',
+            'hba_about_hero_title'      => '.about-hero-inner h1',
+            'hba_about_hero_desc'       => '.about-hero-inner p',
+            'hba_about_btn1_text'       => '.about-hero-ctas .btn-white',
+            'hba_about_btn2_text'       => '.about-hero-ctas .btn-outline-white',
+            'hba_about_mission_label'   => '.mission-strip .mission-label',
+            'hba_about_mission_title'   => '.mission-strip h2',
+            'hba_about_val_label'       => '.values-section .label',
+            'hba_about_val_title'       => '.values-section h2',
+            'hba_about_val_desc'        => '.values-section .section-title p',
+            // Contact Us
+            'hba_contact_eyebrow'       => '.articles-hero-inner .eyebrow',
+            'hba_contact_title'         => '.articles-hero-inner h1',
+            'hba_contact_desc'          => '.articles-hero-inner p',
+            'hba_contact_time'          => '.contact-notice p',
+            'hba_contact_notice_title'  => '.important-notice h3',
+            'hba_contact_notice_desc'   => '.important-notice p',
+            'hba_contact_notice_link'   => '.important-notice a',
+            // Team
+            'hba_team_label'            => '.team-hero-label',
+            'hba_team_title'            => '.team-hero-title',
+            'hba_team_desc'             => '.team-hero-desc',
+            'hba_team_grid_title'       => '.team-section-title',
         ];
+
+        // Contact Cards
+        for ( $i = 1; $i <= 3; $i++ ) {
+            $partials["hba_contact_c{$i}_icon"] = ".contact-cards > div:nth-child({$i}) > div:first-child";
+            $partials["hba_contact_c{$i}_title"] = ".contact-cards > div:nth-child({$i}) > div:last-child h3";
+            $partials["hba_contact_c{$i}_desc"] = ".contact-cards > div:nth-child({$i}) > div:last-child p";
+            $partials["hba_contact_c{$i}_email"] = ".contact-cards > div:nth-child({$i}) > div:last-child a";
+        }
+
+        // About Pillars
+        for ( $i = 1; $i <= 4; $i++ ) {
+            $partials["hba_about_p{$i}_icon"] = ".mission-pillars .pillar:nth-child({$i}) .pillar-ico";
+            $partials["hba_about_p{$i}_title"] = ".mission-pillars .pillar:nth-child({$i}) h4";
+            $partials["hba_about_p{$i}_desc"] = ".mission-pillars .pillar:nth-child({$i}) p";
+        }
+        
+        // About Values
+        for ( $i = 1; $i <= 6; $i++ ) {
+            $partials["hba_about_v{$i}_icon"] = ".values-grid .value-card:nth-child({$i}) .value-ico";
+            $partials["hba_about_v{$i}_title"] = ".values-grid .value-card:nth-child({$i}) h3";
+            $partials["hba_about_v{$i}_desc"] = ".values-grid .value-card:nth-child({$i}) p";
+        }
 
         // Trust metrics
         for ( $i = 0; $i < 4; $i++ ) {
@@ -410,3 +612,6 @@ function hba_customizer_preview_js() {
     wp_enqueue_script( 'hba-customizer-preview', HBA_URI . '/assets/js/customizer-preview.js', ['jquery','customize-preview'], HBA_VERSION, true );
 }
 add_action( 'customize_preview_init', 'hba_customizer_preview_js' );
+
+
+

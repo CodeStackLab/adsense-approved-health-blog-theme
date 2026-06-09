@@ -7,15 +7,15 @@ get_header();
 <!-- TEAM HERO -->
   <section class="team-hero fade-up">
     <div class="team-hero-inner">
-      <div class="team-hero-label">Our Experts</div>
-      <h1 class="team-hero-title">Meet the Team Behind<br/>Health Beyond Age</h1>
-      <p class="team-hero-desc">Every article on this site is shaped by credentialed health professionals &mdash; doctors, dietitians, trainers, and researchers committed to accuracy and your wellbeing.</p>
+      <div class="team-hero-label"><?php echo esc_html( get_theme_mod('hba_team_label', 'Our Experts') ); ?></div>
+      <h1 class="team-hero-title"><?php echo wp_kses_post( get_theme_mod('hba_team_title', 'Meet the Team Behind<br/>Health Beyond Age') ); ?></h1>
+      <p class="team-hero-desc"><?php echo wp_kses_post( get_theme_mod('hba_team_desc', 'Every article on this site is shaped by credentialed health professionals &mdash; doctors, dietitians, trainers, and researchers committed to accuracy and your wellbeing.') ); ?></p>
     </div>
   </section>
 
   <!-- TEAM MEMBERS GRID -->
   <div class="team-grid-container">
-    <div class="team-section-title">Medical Reviewers &amp; Editorial Team</div>
+    <div class="team-section-title"><?php echo esc_html( get_theme_mod('hba_team_grid_title', 'Medical Reviewers & Editorial Team') ); ?></div>
     <div class="team-dynamic-grid">
       <?php
       $team_query = new WP_Query([

@@ -64,7 +64,7 @@
 
             <!-- Categories Column -->
             <div class="foot-col">
-                <h5><?php esc_html_e( 'Categories', 'healthbeyondage' ); ?></h5>
+                <h5><?php echo esc_html( get_theme_mod('hba_footer_col1_title', 'Categories') ); ?></h5>
                 <ul>
                     <?php
                     $cats = get_categories(['number' => 6, 'hide_empty' => true]);
@@ -77,7 +77,7 @@
 
             <!-- Company Column -->
             <div class="foot-col">
-                <h5><?php esc_html_e( 'Company', 'healthbeyondage' ); ?></h5>
+                <h5><?php echo esc_html( get_theme_mod('hba_footer_col2_title', 'Company') ); ?></h5>
                 <ul>
                     <li><a href="<?php echo esc_url( home_url('/about') ); ?>"><?php esc_html_e('About Us','healthbeyondage'); ?></a></li>
                     <li><a href="<?php echo esc_url( home_url('/team') ); ?>"><?php esc_html_e('Meet Our Team','healthbeyondage'); ?></a></li>
@@ -89,7 +89,7 @@
 
             <!-- Legal Column -->
             <div class="foot-col">
-                <h5><?php esc_html_e( 'Legal', 'healthbeyondage' ); ?></h5>
+                <h5><?php echo esc_html( get_theme_mod('hba_footer_col3_title', 'Legal') ); ?></h5>
                 <ul>
                     <li><a href="<?php echo esc_url( home_url('/privacy-policy') ); ?>"><?php esc_html_e('Privacy Policy','healthbeyondage'); ?></a></li>
                     <li><a href="<?php echo esc_url( home_url('/terms-of-use') ); ?>"><?php esc_html_e('Terms of Use','healthbeyondage'); ?></a></li>
