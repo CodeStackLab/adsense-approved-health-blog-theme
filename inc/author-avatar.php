@@ -10,8 +10,13 @@ function hba_enqueue_avatar_scripts( $hook ) {
         return;
     }
     wp_enqueue_media();
-    wp_enqueue_script( 'hba-avatar-js', false, array('jquery'), false, true );
-    wp_add_inline_script( 'hba-avatar-js', "
+}
+
+add_action( 'admin_footer-profile.php', 'hba_avatar_js' );
+add_action( 'admin_footer-user-edit.php', 'hba_avatar_js' );
+function hba_avatar_js() {
+    ?>
+    <script type="text/javascript">
         jQuery(document).ready(function($){
             var mediaUploader;
             $('#hba-upload-avatar-button').click(function(e) {
@@ -41,7 +46,8 @@ function hba_enqueue_avatar_scripts( $hook ) {
                 $(this).hide();
             });
         });
-    " );
+    </script>
+    <?php
 }
 
 // 2. Add custom field to user profile
