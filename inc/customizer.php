@@ -155,6 +155,32 @@ function hba_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'hba_expert_photo', [ 'default' => '', 'sanitize_callback' => 'esc_url_raw' ] );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hba_expert_photo', [ 'label' => __( 'Expert Photo', 'healthbeyondage' ), 'section' => 'hba_homepage_sections' ] ) );
 
+    $wp_customize->add_setting( 'hba_feat_title', [ 'default' => 'Featured Articles', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_feat_title', [ 'label' => 'Featured Title', 'section' => 'hba_homepage_sections', 'type' => 'text' ] );
+    $wp_customize->add_setting( 'hba_feat_link_text', [ 'default' => 'View all trending →', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_feat_link_text', [ 'label' => 'Featured Link Text', 'section' => 'hba_homepage_sections', 'type' => 'text' ] );
+    $wp_customize->add_setting( 'hba_feat_link_url', [ 'default' => '/trending', 'sanitize_callback' => 'esc_url_raw', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_feat_link_url', [ 'label' => 'Featured Link URL', 'section' => 'hba_homepage_sections', 'type' => 'url' ] );
+
+    $wp_customize->add_setting( 'hba_topics_title', [ 'default' => 'Explore by Health Topic', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_topics_title', [ 'label' => 'Topics Title', 'section' => 'hba_homepage_sections', 'type' => 'text' ] );
+    $wp_customize->add_setting( 'hba_topics_link_text', [ 'default' => 'View all topics →', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_topics_link_text', [ 'label' => 'Topics Link Text', 'section' => 'hba_homepage_sections', 'type' => 'text' ] );
+    $wp_customize->add_setting( 'hba_topics_link_url', [ 'default' => '/topics', 'sanitize_callback' => 'esc_url_raw', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_topics_link_url', [ 'label' => 'Topics Link URL', 'section' => 'hba_homepage_sections', 'type' => 'url' ] );
+
+    $wp_customize->add_setting( 'hba_latest_title', [ 'default' => 'Latest Articles', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_latest_title', [ 'label' => 'Latest Title', 'section' => 'hba_homepage_sections', 'type' => 'text' ] );
+    $wp_customize->add_setting( 'hba_latest_link_text', [ 'default' => 'View all articles →', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_latest_link_text', [ 'label' => 'Latest Link Text', 'section' => 'hba_homepage_sections', 'type' => 'text' ] );
+    $wp_customize->add_setting( 'hba_latest_link_url', [ 'default' => '/blog', 'sanitize_callback' => 'esc_url_raw', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_latest_link_url', [ 'label' => 'Latest Link URL', 'section' => 'hba_homepage_sections', 'type' => 'url' ] );
+
+    $wp_customize->add_setting( 'hba_expert_btn_text', [ 'default' => 'Meet Our Team', 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_expert_btn_text', [ 'label' => 'Expert Button Text', 'section' => 'hba_homepage_sections', 'type' => 'text' ] );
+    $wp_customize->add_setting( 'hba_expert_btn_url', [ 'default' => '/team', 'sanitize_callback' => 'esc_url_raw', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_expert_btn_url', [ 'label' => 'Expert Button URL', 'section' => 'hba_homepage_sections', 'type' => 'url' ] );
+
     // Trust metrics
     foreach ( ['150+|Expert Articles','5|Health Categories','100%|Medically Reviewed','Since 2021|Publishing Since'] as $i => $val ) {
         list( $num, $lbl ) = explode( '|', $val );
@@ -308,19 +334,31 @@ function hba_customizer( $wp_customize ) {
             'hba_hero_subtitle'    => '.home-hero p.home-hero-subtitle',
             'hba_hero_btn1_text'   => '.home-ctas .btn-primary',
             'hba_hero_btn2_text'   => '.home-ctas .btn-secondary',
-            'hba_expert_name'      => '.home-medrev-card h4',
-            'hba_expert_quote'     => '.home-medrev-card p',
+            'hba_expert_name'      => '.home-medrev-card h4, .expert-strip-inner div:nth-child(2)',
+            'hba_expert_quote'     => '.home-medrev-card p, .exp-quote',
             'hba_newsletter_title' => '.nl-content h2',
             'hba_newsletter_desc'  => '.nl-content p',
             'hba_ann_bar_text'     => '.ann-bar',
+            'hba_feat_title'       => '.feat-hd h2',
+            'hba_feat_link_text'   => '.feat-hd a.sec-hd-link',
+            'hba_topics_title'     => '.explore-topics-hd h2',
+            'hba_topics_link_text' => '.explore-topics-hd a',
+            'hba_latest_title'     => '.latest-hd h2',
+            'hba_latest_link_text' => '.latest-hd a.sec-hd-link',
+            'hba_latest_articles_count' => '.art-grid',
+            'hba_expert_btn_text'  => '.expert-strip .btn-green',
+            'hba_expert_role'      => '.expert-strip-inner div:nth-child(3)',
         ];
+
+        // Add trust metrics to partials
+        for ($i=0; $i<4; $i++) {
+            $partials["hba_metric_{$i}_num"] = ".tmet-card:nth-child(".($i+1).") .tmet-stat .num";
+            $partials["hba_metric_{$i}_lbl"] = ".tmet-card:nth-child(".($i+1).") .tmet-stat .lbl";
+        }
 
         foreach ( $partials as $setting_id => $selector ) {
             $wp_customize->selective_refresh->add_partial( $setting_id, [
                 'selector' => $selector,
-                'render_callback' => function() use ( $setting_id ) {
-                    return get_theme_mod( $setting_id );
-                },
                 'fallback_refresh' => true,
             ] );
         }

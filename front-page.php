@@ -89,10 +89,10 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
 
 <!-- ===== FEATURED ARTICLES ===== -->
 <div style="background:var(--off)">
-    <div class="section">
-        <div class="sec-hd fade-up">
-            <h2><?php esc_html_e( 'Featured', 'healthbeyondage' ); ?> <span><?php esc_html_e( 'Articles', 'healthbeyondage' ); ?></span></h2>
-            <a href="<?php echo esc_url( home_url('/trending') ); ?>" class="sec-hd-link"><?php esc_html_e( 'View all trending →', 'healthbeyondage' ); ?></a>
+    <div class="section bg-pale">
+        <div class="sec-hd feat-hd fade-up">
+            <h2><?php echo esc_html( get_theme_mod('hba_feat_title', 'Featured Articles') ); ?></h2>
+            <a href="<?php echo esc_url( get_theme_mod('hba_feat_link_url', home_url('/trending')) ); ?>" class="sec-hd-link"><?php echo esc_html( get_theme_mod('hba_feat_link_text', 'View all trending →') ); ?></a>
         </div>
         <div class="hfeat-grid">
             <!-- Main featured card -->
@@ -174,8 +174,8 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
 <section class="explore-topics">
     <div class="explore-topics-inner">
         <div class="explore-topics-hd">
-            <h2><?php esc_html_e( 'Explore by Health Topic', 'healthbeyondage' ); ?></h2>
-            <a href="<?php echo esc_url( home_url('/topics') ); ?>"><?php esc_html_e( 'View all topics →', 'healthbeyondage' ); ?></a>
+            <h2><?php echo esc_html( get_theme_mod('hba_topics_title', 'Explore by Health Topic') ); ?></h2>
+            <a href="<?php echo esc_url( get_theme_mod('hba_topics_link_url', home_url('/topics')) ); ?>"><?php echo esc_html( get_theme_mod('hba_topics_link_text', 'View all topics →') ); ?></a>
         </div>
         <div class="topic-carousel-wrap">
             <div class="topic-carousel" id="topicCarousel">
@@ -242,9 +242,9 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
 <!-- ===== LATEST ARTICLES ===== -->
 <div style="background:var(--off)">
     <div class="section">
-        <div class="sec-hd">
-            <h2><?php esc_html_e( 'Latest', 'healthbeyondage' ); ?> <span><?php esc_html_e( 'Articles', 'healthbeyondage' ); ?></span></h2>
-            <a href="<?php echo esc_url( home_url('/blog') ); ?>" class="sec-hd-link"><?php esc_html_e( 'View all articles →', 'healthbeyondage' ); ?></a>
+        <div class="sec-hd latest-hd">
+            <h2><?php echo esc_html( get_theme_mod('hba_latest_title', 'Latest Articles') ); ?></h2>
+            <a href="<?php echo esc_url( get_theme_mod('hba_latest_link_url', home_url('/blog')) ); ?>" class="sec-hd-link"><?php echo esc_html( get_theme_mod('hba_latest_link_text', 'View all articles →') ); ?></a>
         </div>
         <div class="art-grid">
             <?php
@@ -283,7 +283,7 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
             <?php echo wp_kses_post( get_theme_mod( 'hba_expert_quote', '"Good health isn\'t about perfection — it\'s about <strong>consistent, informed choices.</strong> Every article on this site is reviewed to give you the knowledge to make those choices with confidence."' ) ); ?>
         </blockquote>
         <div>
-            <a href="<?php echo esc_url( home_url('/team') ); ?>" class="btn-green"><?php esc_html_e( 'Meet Our Team', 'healthbeyondage' ); ?></a>
+            <a href="<?php echo esc_url( get_theme_mod('hba_expert_btn_url', home_url('/team')) ); ?>" class="btn-green"><?php echo esc_html( get_theme_mod('hba_expert_btn_text', 'Meet Our Team') ); ?></a>
         </div>
     </div>
 </div>
