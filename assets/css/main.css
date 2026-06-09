@@ -883,7 +883,7 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
    ========================================================================== */
 .topics-hero-enhanced {
   background: linear-gradient(145deg, #074030 0%, var(--g1) 100%);
-  padding: 6rem 1.5rem;
+  padding: 4rem 1.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -913,30 +913,30 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.2);
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  padding: 0.5rem 1.5rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 30px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .topics-hero-title {
   font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   color: #fff;
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
   text-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .topics-hero-desc {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: rgba(255,255,255,0.85);
   line-height: 1.6;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-weight: 300;
 }
 
