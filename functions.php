@@ -221,17 +221,17 @@ function hba_newsletter_section( $chip = '✦ Weekly digest', $title = 'Stay Ahe
     ?>
     <div class="nl-section">
         <div class="nl-inner">
-            <div class="nl-chip"><?php echo esc_html( $chip ); ?></div>
+            <div class="nl-chip"><?php echo esc_html( get_theme_mod('hba_nl_chip', $chip) ); ?></div>
             <h2><?php echo wp_kses_post( $t ); ?></h2>
             <p><?php echo wp_kses_post( $d ); ?></p>
             <form class="nl-form" method="post" action="#">
-                <input type="email" name="email" placeholder="<?php esc_attr_e( 'your@email.com', 'healthbeyondage' ); ?>" required />
-                <button type="submit"><?php esc_html_e( 'Subscribe Free', 'healthbeyondage' ); ?></button>
+                <input type="email" name="email" placeholder="<?php echo esc_attr( get_theme_mod('hba_nl_placeholder', 'your@email.com') ); ?>" required />
+                <button type="submit"><?php echo esc_html( get_theme_mod('hba_nl_btn', 'Subscribe Free') ); ?></button>
             </form>
             <div class="nl-perks">
-                <div class="nl-perk"><div class="pdot"></div><?php esc_html_e( 'Weekly health insights', 'healthbeyondage' ); ?></div>
-                <div class="nl-perk"><div class="pdot"></div><?php esc_html_e( 'Evidence-based research', 'healthbeyondage' ); ?></div>
-                <div class="nl-perk"><div class="pdot"></div><?php esc_html_e( 'Unsubscribe anytime', 'healthbeyondage' ); ?></div>
+                <div class="nl-perk"><div class="pdot"></div><?php echo esc_html( get_theme_mod('hba_nl_perk_1', 'Weekly health insights') ); ?></div>
+                <div class="nl-perk"><div class="pdot"></div><?php echo esc_html( get_theme_mod('hba_nl_perk_2', 'Evidence-based research') ); ?></div>
+                <div class="nl-perk"><div class="pdot"></div><?php echo esc_html( get_theme_mod('hba_nl_perk_3', 'Unsubscribe anytime') ); ?></div>
             </div>
         </div>
     </div>
