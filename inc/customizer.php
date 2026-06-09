@@ -267,6 +267,64 @@ function hba_customizer( $wp_customize ) {
 
     $wp_customize->add_setting( 'hba_sp_callout_border', [ 'default' => '#27903F', 'sanitize_callback' => 'sanitize_hex_color', 'transport' => 'refresh' ] );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hba_sp_callout_border', [ 'label' => __( 'Callout Accent Border', 'healthbeyondage' ), 'section' => 'hba_single_post' ] ) );
+    /* ============================
+       ADVANCED STYLING CONTROLS
+    ============================ */
+    $wp_customize->add_section( 'hba_advanced_styling', [
+        'title' => __( 'Advanced Section Styling', 'healthbeyondage' ),
+        'panel' => 'hba_panel',
+    ] );
+
+    $adv_colors = [
+        'hba_hero_bg'           => [ 'Hero Background Color', '#ffffff' ],
+        'hba_hero_title_color'  => [ 'Hero Title Color', '#111F16' ],
+        'hba_hero_sub_color'    => [ 'Hero Subtitle Color', '#4a5568' ],
+        'hba_feat_bg'           => [ 'Featured Articles Bg', '#F5F8F6' ],
+        'hba_nl_bg'             => [ 'Newsletter Gradient Start', '#1A7A3C' ],
+    ];
+
+    foreach ( $adv_colors as $key => $args ) {
+        $wp_customize->add_setting( $key, [ 'default' => $args[1], 'sanitize_callback' => 'sanitize_hex_color', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $key, [ 'label' => $args[0], 'section' => 'hba_advanced_styling' ] ) );
+    }
+
+    $adv_sizes = [
+        'hba_hero_title_size' => [ 'Hero Title Size (rem)', 3.8 ],
+        'hba_hero_sub_size'   => [ 'Hero Subtitle Size (rem)', 1.15 ],
+    ];
+
+    foreach ( $adv_sizes as $key => $args ) {
+        $wp_customize->add_setting( $key, [ 'default' => $args[1], 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+        $wp_customize->add_control( $key, [ 'label' => $args[0], 'section' => 'hba_advanced_styling', 'type' => 'number', 'input_attrs' => ['min' => 0.5, 'max' => 6, 'step' => 0.1] ] );
+    }
+
+    /* ============================
+       SELECTIVE REFRESH PARTIALS
+    ============================ */
+    if ( isset( $wp_customize->selective_refresh ) ) {
+        $partials = [
+            'hba_hero_eyebrow'     => '.home-eyebrow',
+            'hba_hero_title'       => '.home-hero h1',
+            'hba_hero_subtitle'    => '.home-hero p.home-hero-subtitle',
+            'hba_hero_btn1_text'   => '.home-ctas .btn-primary',
+            'hba_hero_btn2_text'   => '.home-ctas .btn-secondary',
+            'hba_expert_name'      => '.home-medrev-card h4',
+            'hba_expert_quote'     => '.home-medrev-card p',
+            'hba_newsletter_title' => '.nl-content h2',
+            'hba_newsletter_desc'  => '.nl-content p',
+            'hba_ann_bar_text'     => '.ann-bar',
+        ];
+
+        foreach ( $partials as $setting_id => $selector ) {
+            $wp_customize->selective_refresh->add_partial( $setting_id, [
+                'selector' => $selector,
+                'render_callback' => function() use ( $setting_id ) {
+                    return get_theme_mod( $setting_id );
+                },
+                'fallback_refresh' => true,
+            ] );
+        }
+    }
 }
 add_action( 'customize_register', 'hba_customizer' );
 
@@ -275,3 +333,4 @@ function hba_customizer_preview_js() {
     wp_enqueue_script( 'hba-customizer-preview', HBA_URI . '/assets/js/customizer-preview.js', ['jquery','customize-preview'], HBA_VERSION, true );
 }
 add_action( 'customize_preview_init', 'hba_customizer_preview_js' );
+

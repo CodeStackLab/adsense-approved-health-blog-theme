@@ -16,7 +16,24 @@ $btn2_url     = get_theme_mod( 'hba_hero_btn2_url', home_url('/blog') );
 $trust1       = get_theme_mod( 'hba_hero_trust1', 'Medically Reviewed Content' );
 $trust2       = get_theme_mod( 'hba_hero_trust2', 'Evidence-Based Research' );
 $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
+
+// Advanced styling from Customizer
+$h_bg = get_theme_mod('hba_hero_bg', '#ffffff');
+$h_tc = get_theme_mod('hba_hero_title_color', '#111F16');
+$h_sc = get_theme_mod('hba_hero_sub_color', '#4a5568');
+$f_bg = get_theme_mod('hba_feat_bg', '#F5F8F6');
+$n_bg = get_theme_mod('hba_nl_bg', '#1A7A3C');
+$h_ts = get_theme_mod('hba_hero_title_size', 3.8);
+$h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
 ?>
+
+<style>
+.home-hero { background: <?php echo esc_html($h_bg); ?> !important; }
+.home-hero h1 { color: <?php echo esc_html($h_tc); ?> !important; font-size: <?php echo esc_html($h_ts); ?>rem !important; }
+.home-hero p.home-hero-subtitle { color: <?php echo esc_html($h_sc); ?> !important; font-size: <?php echo esc_html($h_ss); ?>rem !important; }
+.section.bg-pale { background: <?php echo esc_html($f_bg); ?> !important; }
+.nl-section { background: linear-gradient(155deg, <?php echo esc_html($n_bg); ?> 0%, #074030 100%) !important; }
+</style>
 
 <!-- ===== HOMEPAGE HERO ===== -->
 <section class="home-hero">
@@ -24,7 +41,7 @@ $trust3       = get_theme_mod( 'hba_hero_trust3', 'Regularly Updated' );
         <div class="home-hero-left">
             <div class="home-eyebrow"><?php echo esc_html( $hero_eyebrow ); ?></div>
             <h1><?php echo esc_html( $hero_title ); ?></h1>
-            <p><?php echo esc_html( $hero_sub ); ?></p>
+            <p class="home-hero-subtitle"><?php echo esc_html( $hero_sub ); ?></p>
             <div class="home-ctas">
                 <a href="<?php echo esc_url( $btn1_url ); ?>" class="btn-primary"><?php echo esc_html( $btn1_text ); ?></a>
                 <a href="<?php echo esc_url( $btn2_url ); ?>" class="btn-secondary"><?php echo esc_html( $btn2_text ); ?></a>
