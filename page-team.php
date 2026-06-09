@@ -63,6 +63,13 @@ get_header();
                       <?php endforeach; ?>
                     </div>
                   <?php endif; ?>
+                  
+                  <div style="margin-top:1.5rem; width:100%;">
+                      <a href="<?php the_permalink(); ?>" class="btn-ghost" style="width:100%; display:flex; justify-content:center; align-items:center; gap:0.5rem; padding:0.6rem 1rem;">
+                          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                          View Full Profile
+                      </a>
+                  </div>
                 </div>
               </div>
               <?php

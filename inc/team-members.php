@@ -46,10 +46,10 @@ function hba_register_team_cpt() {
         'can_export'            => true,
         'has_archive'           => false,
         'exclude_from_search'   => false,
-        'publicly_queryable'    => false,
+        'publicly_queryable'    => true,
         'capability_type'       => 'post',
         'show_in_rest'          => true,
-        'rewrite'               => false,
+        'rewrite'               => array( 'slug' => 'team-member' ),
     );
     register_post_type( 'hba_team', $args );
 }
