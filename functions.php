@@ -270,7 +270,7 @@ function hba_article_card( $post_id, $extra_class = '' ) {
             <h3><?php echo esc_html( get_the_title( $post_id ) ); ?></h3>
             <div class="art-foot">
                 <div class="author-row">
-                    <div class="av"><?php echo esc_html( $initials ); ?></div>
+                    <div class="av"><?php echo get_avatar( $author_id, 32 ); ?></div>
                     <span class="aname"><?php echo esc_html( $author ); ?></span>
                 </div>
                 <span class="rtime"><?php echo esc_html( $read_time ); ?></span>

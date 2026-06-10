@@ -23,7 +23,8 @@ $custom_avatar_id = get_user_meta( $author_id, '_hba_custom_avatar_id', true );
 if ( $custom_avatar_id ) {
     $avatar_html = wp_get_attachment_image( $custom_avatar_id, [80, 80] );
 } else {
-    $avatar_html = esc_html( $initials );
+    // If they have a gravatar or another plugin overriding avatar, use get_avatar
+    $avatar_html = get_avatar( $author_id, 80 );
 }
 $read_time = hba_reading_time( get_the_ID() );
 $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'hba-featured' );
