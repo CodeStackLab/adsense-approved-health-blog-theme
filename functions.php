@@ -198,11 +198,12 @@ function hba_get_author_avatar( $author_id, $size = 32, $size_array = [32, 32] )
     // First check if they have a custom post type profile in hba_team
     $args = array(
         'post_type'      => 'hba_team',
-        'title'          => $author_name,
+        's'              => $author_name,
         'posts_per_page' => 1,
         'post_status'    => 'publish'
     );
     $team_query = new WP_Query($args);
+
     if ( $team_query->have_posts() ) {
         $team_post = $team_query->posts[0];
         $thumb_id = get_post_thumbnail_id( $team_post->ID );

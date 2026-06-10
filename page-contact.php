@@ -64,6 +64,7 @@ get_header(); ?>
 <style>
 /* Layout */
 .contact-page-layout {
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     padding: 3rem 1.5rem 6rem;
@@ -71,21 +72,34 @@ get_header(); ?>
     grid-template-columns: 1.4fr 1fr;
     gap: 4rem;
     align-items: start;
+    box-sizing: border-box;
+}
+.contact-sidebar {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+.contact-form-container {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 /* Styling for CF7 Form to match theme */
-.hba-cf7-wrapper form { display: flex; flex-direction: column; gap: 1.25rem; }
-.hba-cf7-wrapper p { margin: 0; }
-.hba-cf7-wrapper label { font-size: .85rem; font-weight: 600; color: var(--text); margin-bottom: .4rem; display: block; }
+.hba-cf7-wrapper * { box-sizing: border-box; max-width: 100%; }
+.hba-cf7-wrapper form { display: flex; flex-direction: column; gap: 1.25rem; width: 100%; }
+.hba-cf7-wrapper p { margin: 0; width: 100%; }
+.hba-cf7-wrapper label { font-size: .85rem; font-weight: 600; color: var(--text); margin-bottom: .4rem; display: block; width: 100%; }
 .hba-cf7-wrapper input[type="text"],
 .hba-cf7-wrapper input[type="email"],
 .hba-cf7-wrapper textarea,
 .hba-cf7-wrapper select { width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: .8rem 1rem; font-family: var(--sans); font-size: .95rem; background: var(--off); transition: border-color .2s; }
 .hba-cf7-wrapper input:focus, .hba-cf7-wrapper textarea:focus { outline: none; border-color: var(--g1); background: #fff; }
-.hba-cf7-wrapper input[type="submit"] { background: var(--g1); color: #fff; border: none; padding: .9rem 2rem; font-family: var(--sans); font-weight: 700; font-size: 1rem; border-radius: 30px; cursor: pointer; transition: background .2s; }
+.hba-cf7-wrapper input[type="submit"] { background: var(--g1); color: #fff; border: none; padding: .9rem 2rem; font-family: var(--sans); font-weight: 700; font-size: 1rem; border-radius: 30px; cursor: pointer; transition: background .2s; width: 100%; white-space: normal; }
 .hba-cf7-wrapper input[type="submit"]:hover { background: var(--g2); }
 @media (max-width: 900px) {
-    .contact-page-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-page-layout { grid-template-columns: 1fr; gap: 2.5rem; padding: 2rem 1.5rem 4rem; }
 }
 @media (max-width: 768px) {
     .hba-cf7-wrapper .wpcf7-form-control-wrap { display: block; width: 100%; }
