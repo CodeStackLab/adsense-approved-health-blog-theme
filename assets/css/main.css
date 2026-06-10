@@ -1266,6 +1266,11 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
   color: var(--g1);
 }
 
+.author-hero-enhanced .author-stats span {
+  color: var(--g1);
+  background: var(--g-pale);
+}
+
 .author-stats svg {
   width: 20px;
   height: 20px;
