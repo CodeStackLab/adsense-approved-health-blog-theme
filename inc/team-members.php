@@ -126,6 +126,7 @@ function hba_team_details_meta_box_html( $post ) {
     echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_quote">' . __( 'Personal Quote', 'healthbeyondage' ) . '</label></strong></p>';
     echo '<textarea id="hba_team_quote" name="hba_team_quote" style="width:100%;" rows="3">' . esc_textarea( $quote ) . '</textarea>';
 
+    $about = get_post_meta( $post->ID, '_hba_team_about', true );
     echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_about">' . __( 'About / Biography', 'healthbeyondage' ) . '</label></strong></p>';
     echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'This text will appear in the "About" section before the quote. You can also use the main WordPress editor at the top.', 'healthbeyondage' ) . '</p>';
     echo '<textarea id="hba_team_about" name="hba_team_about" style="width:100%;" rows="5">' . esc_textarea( $about ) . '</textarea>';
