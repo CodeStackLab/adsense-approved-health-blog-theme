@@ -6,6 +6,13 @@
 get_header();
 
 $term = get_queried_object();
+
+// Automatically redirect to the matching standard Category page to fix the issue where custom taxonomy posts don't match.
+$cat = get_category_by_slug( $term->slug );
+if ( $cat ) {
+    wp_redirect( get_category_link( $cat->term_id ), 301 );
+    exit;
+}
 ?>
 
 <!-- TOPIC HERO -->
