@@ -54,7 +54,7 @@ function hba_avatar_js() {
 add_action( 'show_user_profile', 'hba_custom_avatar_field' );
 add_action( 'edit_user_profile', 'hba_custom_avatar_field' );
 function hba_custom_avatar_field( $user ) {
-    $avatar_id = get_the_author_meta( '_hba_custom_avatar_id', $user->ID );
+    $avatar_id = get_user_meta( $user->ID, '_hba_custom_avatar_id', true );
     $avatar_url = '';
     if ( $avatar_id ) {
         $avatar_url = wp_get_attachment_image_url( $avatar_id, 'medium' );
@@ -82,11 +82,13 @@ function hba_custom_avatar_field( $user ) {
 add_action( 'personal_options_update', 'hba_save_custom_avatar_field' );
 add_action( 'edit_user_profile_update', 'hba_save_custom_avatar_field' );
 function hba_save_custom_avatar_field( $user_id ) {
-    if ( ! current_user_can( 'edit_user', $user_id ) ) {
+    if ( ! current_user_can( 'edit_user', $user_id ) && ! current_user_can( 'edit_users' ) ) {
         return false;
     }
     if ( isset( $_POST['hba_custom_avatar_id'] ) ) {
         update_user_meta( $user_id, '_hba_custom_avatar_id', sanitize_text_field( $_POST['hba_custom_avatar_id'] ) );
+    } else {
+        delete_user_meta( $user_id, '_hba_custom_avatar_id' );
     }
 }
 
