@@ -18,6 +18,13 @@ $author_id = get_the_author_meta('ID');
 $author    = get_the_author_meta('display_name');
 $author_bio = get_the_author_meta('description');
 $initials  = hba_author_initials( $author_id );
+
+$custom_avatar_id = get_user_meta( $author_id, '_hba_custom_avatar_id', true );
+if ( $custom_avatar_id ) {
+    $avatar_html = wp_get_attachment_image( $custom_avatar_id, [80, 80] );
+} else {
+    $avatar_html = esc_html( $initials );
+}
 $read_time = hba_reading_time( get_the_ID() );
 $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'hba-featured' );
 // Medical Reviewer Logic
@@ -99,7 +106,7 @@ $tags = get_the_tags();
         <?php if ( get_theme_mod( 'hba_sp_show_byline', true ) ) : ?>
         <div class="article-byline">
             <a href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" class="byline-author" title="<?php echo esc_attr( sprintf( __( 'View all posts by %s', 'healthbeyondage' ), $author ) ); ?>">
-                <div class="byline-av"><?php echo esc_html( $initials ); ?></div>
+                <div class="byline-av"><?php echo $avatar_html; ?></div>
                 <div>
                     <div class="byline-name"><?php echo esc_html( $author ); ?></div>
                     <div class="byline-cred"><?php echo esc_html( get_the_author_meta('user_description', $author_id) ?: 'Health Writer' ); ?></div>
