@@ -73,15 +73,41 @@ $post_count = count_user_posts( $author_id );
             </div>
 
             <div class="art-list">
-                <?php if ( have_posts() ) {
-                    while ( have_posts() ) { the_post(); hba_article_list_item( get_the_ID() ); }
+                <?php 
+                $author_query = new WP_Query([
+                    'author' => $author_id,
+                    'post_type' => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => get_option('posts_per_page'),
+                    'paged' => get_query_var('paged') ?: 1
+                ]);
+                if ( $author_query->have_posts() ) {
+                    while ( $author_query->have_posts() ) { 
+                        $author_query->the_post(); 
+                        hba_article_list_item( get_the_ID() ); 
+                    }
+                    wp_reset_postdata();
                 } else {
                     echo '<div style="padding:3rem; text-align:center; background:#fff; border-radius:12px; border:1px solid var(--border);"><p style="color:var(--mid); margin:0;">' . esc_html__('No articles found for this author.','healthbeyondage') . '</p></div>';
                 } ?>
             </div>
             
             <div style="margin-top:3rem;">
-                <?php hba_pagination(); ?>
+                <?php 
+                // Custom pagination for custom query
+                $big = 999999999;
+                $pages = paginate_links([
+                    'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                    'format'    => '?paged=%#%',
+                    'current'   => max( 1, get_query_var('paged') ),
+                    'total'     => $author_query->max_num_pages,
+                    'prev_text' => '←',
+                    'next_text' => '→',
+                ]);
+                if ( $pages ) {
+                    echo '<div class="load-more">' . $pages . '</div>';
+                }
+                ?>
             </div>
         </div>
 

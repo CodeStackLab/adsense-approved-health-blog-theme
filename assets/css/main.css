@@ -507,7 +507,11 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
   .articles-hero-inner h1, .cat-hero-inner h1, .page-hdr h1 { font-size: 1.7rem !important; }
   .medrev-bar { flex-direction: column; align-items: flex-start; }
   .home-medrev-card { bottom: 0; left: 1rem; right: 1rem; max-width: none; flex-direction: column; text-align: center; padding: 1.5rem; }
-  .home-trust-row { justify-content: center; }
+  .home-trust-row { justify-content: center; gap: 0.5rem; flex-wrap: nowrap; }
+  .htrust-item { max-width: 32%; }
+  .htrust-lbl { font-size: 0.7rem; line-height: 1.2; }
+  .htrust-ico { width: 32px; height: 32px; }
+  .htrust-ico svg { width: 20px; height: 20px; }
   .home-ctas { justify-content: center; }
   .author-hero-inner { flex-direction: column; text-align: center; gap: 1rem; }
   .author-hero { padding: 2rem 1.5rem; }
@@ -526,11 +530,6 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
   .home-hero-left h1 { font-size: 1.8rem; }
   .home-ctas { flex-direction: column; width: 100%; gap: 1rem; }
   .home-ctas a { width: 100%; text-align: center; }
-  .home-trust-row { justify-content: center; gap: 0.5rem; flex-wrap: nowrap; }
-  .htrust-item { max-width: 32%; }
-  .htrust-lbl { font-size: 0.7rem; line-height: 1.2; }
-  .htrust-ico { width: 32px; height: 32px; }
-  .htrust-ico svg { width: 20px; height: 20px; }
   .nl-form { flex-direction: column; }
   .period-tabs { flex-wrap: wrap; }
 }
