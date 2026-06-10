@@ -176,7 +176,7 @@ get_header();
                     } elseif ( ! empty( trim( $content ) ) ) {
                         the_content(); 
                     } elseif ( $is_sarah ) {
-                        echo '<p>Dr. Sarah Matheson is a board-certified internist with over 18 years of clinical experience in internal and preventive medicine. After completing her residency at Johns Hopkins Hospital, she spent a decade at Massachusetts General Hospital as an attending physician before transitioning into health communications and medical education. Dr. Matheson founded Health Beyond Age\'s medical review program in 2021, building a robust network of experts to ensure that every piece of content meets the highest standards of accuracy and clinical relevance.</p>';
+                        echo '<p>Dr. Sarah Matheson is a board-certified internist with over 18 years of clinical experience in internal and preventive medicine. After completing her residency at Johns Hopkins Hospital, she spent a decade at Massachusetts General Hospital as an attending physician before transitioning into health communications and medical education. Dr. Matheson founded Health Beyond Age\'s medical review program in 2021, building the editorial standards and peer-review framework that ensures every article we publish reflects current evidence-based clinical guidelines. She brings a rare combination of frontline clinical experience and a genuine passion for making accurate health information accessible to everyone. Outside of medicine, she is a faculty lecturer at Harvard Medical School\'s continuing education program, where she teaches internal medicine residents the principles of preventive care and healthy aging.</p>';
                     }
                     ?>
                 </div>
