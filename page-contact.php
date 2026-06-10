@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php hba_breadcrumb(); ?>
 
-<div style="max-width:1100px; margin:0 auto; padding:3rem 1.5rem 6rem; display:grid; grid-template-columns:1.4fr 1fr; gap:4rem; align-items:start;">
+<div class="contact-page-layout">
 
     <!-- Left Sidebar: Contact Info -->
     <div style="display:flex; flex-direction:column; gap:1.5rem;" class="contact-sidebar">
@@ -62,6 +62,17 @@ get_header(); ?>
 </div>
 
 <style>
+/* Layout */
+.contact-page-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
 /* Styling for CF7 Form to match theme */
 .hba-cf7-wrapper form { display: flex; flex-direction: column; gap: 1.25rem; }
 .hba-cf7-wrapper p { margin: 0; }
@@ -73,8 +84,12 @@ get_header(); ?>
 .hba-cf7-wrapper input:focus, .hba-cf7-wrapper textarea:focus { outline: none; border-color: var(--g1); background: #fff; }
 .hba-cf7-wrapper input[type="submit"] { background: var(--g1); color: #fff; border: none; padding: .9rem 2rem; font-family: var(--sans); font-weight: 700; font-size: 1rem; border-radius: 30px; cursor: pointer; transition: background .2s; }
 .hba-cf7-wrapper input[type="submit"]:hover { background: var(--g2); }
+@media (max-width: 900px) {
+    .contact-page-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+}
 @media (max-width: 768px) {
     .hba-cf7-wrapper .wpcf7-form-control-wrap { display: block; width: 100%; }
+    .contact-form-container { padding: 1.5rem !important; }
 }
 </style>
 </div>
