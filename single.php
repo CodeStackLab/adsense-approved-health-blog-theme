@@ -19,13 +19,7 @@ $author    = get_the_author_meta('display_name');
 $author_bio = get_the_author_meta('description');
 $initials  = hba_author_initials( $author_id );
 
-$custom_avatar_id = get_user_meta( $author_id, '_hba_custom_avatar_id', true );
-if ( $custom_avatar_id ) {
-    $avatar_html = wp_get_attachment_image( $custom_avatar_id, [80, 80] );
-} else {
-    // If they have a gravatar or another plugin overriding avatar, use get_avatar
-    $avatar_html = get_avatar( $author_id, 80 );
-}
+$avatar_html = hba_get_author_avatar( $author_id, 80, [80, 80] );
 $read_time = hba_reading_time( get_the_ID() );
 $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'hba-featured' );
 // Medical Reviewer Logic

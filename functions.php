@@ -190,6 +190,32 @@ function hba_author_initials( $user_id = null ) {
 }
 
 /**
+ * Get author avatar image HTML (Checks hba_team first, then get_avatar)
+ */
+function hba_get_author_avatar( $author_id, $size = 32, $size_array = [32, 32] ) {
+    $author_name = get_the_author_meta( 'display_name', $author_id );
+    
+    // First check if they have a custom post type profile in hba_team
+    $args = array(
+        'post_type'      => 'hba_team',
+        'title'          => $author_name,
+        'posts_per_page' => 1,
+        'post_status'    => 'publish'
+    );
+    $team_query = new WP_Query($args);
+    if ( $team_query->have_posts() ) {
+        $team_post = $team_query->posts[0];
+        $thumb_id = get_post_thumbnail_id( $team_post->ID );
+        if ( $thumb_id ) {
+            return wp_get_attachment_image( $thumb_id, $size_array );
+        }
+    }
+    
+    // Fallback to get_avatar
+    return get_avatar( $author_id, $size );
+}
+
+/**
  * Get category badge class
  */
 function hba_category_badge_class( $cat_slug ) {
@@ -270,7 +296,7 @@ function hba_article_card( $post_id, $extra_class = '' ) {
             <h3><?php echo esc_html( get_the_title( $post_id ) ); ?></h3>
             <div class="art-foot">
                 <div class="author-row">
-                    <div class="av"><?php echo get_avatar( $author_id, 32 ); ?></div>
+                    <div class="av"><?php echo hba_get_author_avatar( $author_id, 32, [32, 32] ); ?></div>
                     <span class="aname"><?php echo esc_html( $author ); ?></span>
                 </div>
                 <span class="rtime"><?php echo esc_html( $read_time ); ?></span>

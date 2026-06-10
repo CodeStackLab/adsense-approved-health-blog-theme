@@ -18,7 +18,7 @@ $post_count = count_user_posts( $author_id );
 <div class="author-hero-enhanced fade-up">
     <div class="author-hero-content">
         <div class="author-hero-avatar">
-            <?php echo get_avatar( $author_id, 240, '', $author_name . ' Profile Picture' ); ?>
+            <?php echo hba_get_author_avatar( $author_id, 240, [240, 240] ); ?>
         </div>
         <div class="author-hero-text">
             <span class="author-badge"><?php esc_html_e( 'Meet the Author', 'healthbeyondage' ); ?></span>
