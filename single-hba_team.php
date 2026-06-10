@@ -168,11 +168,15 @@ get_header();
                 <h2 style="font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#166534; margin:0 0 1.5rem; border-bottom:1px solid #e5e7eb; padding-bottom:1rem; font-weight:700;">About</h2>
                 <div style="font-size:1.1rem; line-height:1.8; color:#374151; margin-bottom:3rem;">
                     <?php 
+                    $about_meta = get_post_meta( get_the_ID(), '_hba_team_about', true );
                     $content = get_the_content();
-                    if (empty(trim($content)) && $is_sarah) {
-                        echo '<p>Dr. Sarah Matheson is a board-certified internist with over 18 years of clinical experience in internal and preventive medicine. After completing her residency at Johns Hopkins Hospital, she spent a decade at Massachusetts General Hospital as an attending physician before transitioning into health communications and medical education. Dr. Matheson founded Health Beyond Age\'s medical review program in 2021, building a robust network of experts to ensure that every piece of content meets the highest standards of accuracy and clinical relevance.</p>';
-                    } else {
+                    
+                    if ( ! empty( $about_meta ) ) {
+                        echo wp_kses_post( wpautop( $about_meta ) );
+                    } elseif ( ! empty( trim( $content ) ) ) {
                         the_content(); 
+                    } elseif ( $is_sarah ) {
+                        echo '<p>Dr. Sarah Matheson is a board-certified internist with over 18 years of clinical experience in internal and preventive medicine. After completing her residency at Johns Hopkins Hospital, she spent a decade at Massachusetts General Hospital as an attending physician before transitioning into health communications and medical education. Dr. Matheson founded Health Beyond Age\'s medical review program in 2021, building a robust network of experts to ensure that every piece of content meets the highest standards of accuracy and clinical relevance.</p>';
                     }
                     ?>
                 </div>

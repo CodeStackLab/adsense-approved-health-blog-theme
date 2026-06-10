@@ -126,6 +126,10 @@ function hba_team_details_meta_box_html( $post ) {
     echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_quote">' . __( 'Personal Quote', 'healthbeyondage' ) . '</label></strong></p>';
     echo '<textarea id="hba_team_quote" name="hba_team_quote" style="width:100%;" rows="3">' . esc_textarea( $quote ) . '</textarea>';
 
+    echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_about">' . __( 'About / Biography', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'This text will appear in the "About" section before the quote. You can also use the main WordPress editor at the top.', 'healthbeyondage' ) . '</p>';
+    echo '<textarea id="hba_team_about" name="hba_team_about" style="width:100%;" rows="5">' . esc_textarea( $about ) . '</textarea>';
+
     echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_education">' . __( 'Education & Training', 'healthbeyondage' ) . '</label></strong></p>';
     echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'One entry per line. Example: Doctor of Medicine (MD) | Johns Hopkins School of Medicine - 2005', 'healthbeyondage' ) . '</p>';
     echo '<textarea id="hba_team_education" name="hba_team_education" style="width:100%;" rows="4">' . esc_textarea( $education ) . '</textarea>';
@@ -192,6 +196,9 @@ function hba_save_team_meta_box_data( $post_id ) {
             }
             if ( isset( $_POST['hba_team_quote'] ) ) {
                 update_post_meta( $post_id, '_hba_team_quote', sanitize_textarea_field( $_POST['hba_team_quote'] ) );
+            }
+            if ( isset( $_POST['hba_team_about'] ) ) {
+                update_post_meta( $post_id, '_hba_team_about', wp_kses_post( $_POST['hba_team_about'] ) );
             }
             if ( isset( $_POST['hba_team_education'] ) ) {
                 update_post_meta( $post_id, '_hba_team_education', sanitize_textarea_field( $_POST['hba_team_education'] ) );
