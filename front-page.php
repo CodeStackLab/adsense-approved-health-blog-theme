@@ -23,7 +23,7 @@ $h_tc = get_theme_mod('hba_hero_title_color', '#111F16');
 $h_sc = get_theme_mod('hba_hero_sub_color', '#4a5568');
 $f_bg = get_theme_mod('hba_feat_bg', '#F5F8F6');
 $n_bg = get_theme_mod('hba_nl_bg', '#1A7A3C');
-$h_ts = get_theme_mod('hba_hero_title_size', 3.8);
+$h_ts = get_theme_mod('hba_hero_title_size', 2.4);
 $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
 ?>
 

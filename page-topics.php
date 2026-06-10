@@ -30,10 +30,11 @@ get_header();
         
         <?php
         $topics = get_terms([
-            'taxonomy' => 'hba_health_topic',
+            'taxonomy' => 'category',
             'hide_empty' => true,
             'orderby' => 'name',
-            'order' => 'ASC'
+            'order' => 'ASC',
+            'exclude' => [1] // Usually Uncategorized is ID 1
         ]);
 
         if ( ! empty( $topics ) && ! is_wp_error( $topics ) ) {

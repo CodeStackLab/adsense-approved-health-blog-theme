@@ -80,6 +80,17 @@ function hba_team_details_meta_box_html( $post ) {
     $role        = get_post_meta( $post->ID, '_hba_team_role', true );
     $credentials = get_post_meta( $post->ID, '_hba_team_credentials', true );
     $tags        = get_post_meta( $post->ID, '_hba_team_tags', true );
+    
+    // Extended fields
+    $email               = get_post_meta( $post->ID, '_hba_team_email', true );
+    $years_practice      = get_post_meta( $post->ID, '_hba_team_years_practice', true );
+    $articles_reviewed   = get_post_meta( $post->ID, '_hba_team_articles_reviewed', true );
+    $publications_count  = get_post_meta( $post->ID, '_hba_team_publications_count', true );
+    $joined_year         = get_post_meta( $post->ID, '_hba_team_joined_year', true );
+    $quote               = get_post_meta( $post->ID, '_hba_team_quote', true );
+    $education           = get_post_meta( $post->ID, '_hba_team_education', true );
+    $certifications      = get_post_meta( $post->ID, '_hba_team_certifications', true );
+    $publications_list   = get_post_meta( $post->ID, '_hba_team_publications_list', true );
 
     echo '<p><strong><label for="hba_team_role">' . __( 'Role / Job Title', 'healthbeyondage' ) . '</label></strong></p>';
     echo '<input type="text" id="hba_team_role" name="hba_team_role" value="' . esc_attr( $role ) . '" style="width:100%; max-width:400px;" placeholder="e.g. Lead Medical Reviewer" />';
@@ -91,6 +102,42 @@ function hba_team_details_meta_box_html( $post ) {
     echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'Enter specialties separated by commas (e.g. Preventive Medicine, Aging, Cardiovascular)', 'healthbeyondage' ) . '</p>';
     echo '<input type="text" id="hba_team_tags" name="hba_team_tags" value="' . esc_attr( $tags ) . '" style="width:100%;" />';
     
+    echo '<hr style="margin:2rem 0;">';
+    echo '<h3>' . __( 'Quick Stats', 'healthbeyondage' ) . '</h3>';
+    
+    echo '<p><strong><label for="hba_team_years_practice">' . __( 'Years of Clinical Practice', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="text" id="hba_team_years_practice" name="hba_team_years_practice" value="' . esc_attr( $years_practice ) . '" style="width:100%; max-width:200px;" placeholder="e.g. 18+" />';
+
+    echo '<p><strong><label for="hba_team_articles_reviewed">' . __( 'Articles Reviewed', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="text" id="hba_team_articles_reviewed" name="hba_team_articles_reviewed" value="' . esc_attr( $articles_reviewed ) . '" style="width:100%; max-width:200px;" placeholder="e.g. 340+" />';
+
+    echo '<p><strong><label for="hba_team_publications_count">' . __( 'Research Publications (Count)', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="text" id="hba_team_publications_count" name="hba_team_publications_count" value="' . esc_attr( $publications_count ) . '" style="width:100%; max-width:200px;" placeholder="e.g. 12" />';
+
+    echo '<p><strong><label for="hba_team_joined_year">' . __( 'Joined Year', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="text" id="hba_team_joined_year" name="hba_team_joined_year" value="' . esc_attr( $joined_year ) . '" style="width:100%; max-width:200px;" placeholder="e.g. 2021" />';
+
+    echo '<hr style="margin:2rem 0;">';
+    echo '<h3>' . __( 'Extended Profile Info', 'healthbeyondage' ) . '</h3>';
+
+    echo '<p><strong><label for="hba_team_email">' . __( 'Email Contact', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="email" id="hba_team_email" name="hba_team_email" value="' . esc_attr( $email ) . '" style="width:100%; max-width:400px;" placeholder="e.g. sarah.matheson@healthbeyondage.com" />';
+
+    echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_quote">' . __( 'Personal Quote', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<textarea id="hba_team_quote" name="hba_team_quote" style="width:100%;" rows="3">' . esc_textarea( $quote ) . '</textarea>';
+
+    echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_education">' . __( 'Education & Training', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'One entry per line. Example: Doctor of Medicine (MD) | Johns Hopkins School of Medicine - 2005', 'healthbeyondage' ) . '</p>';
+    echo '<textarea id="hba_team_education" name="hba_team_education" style="width:100%;" rows="4">' . esc_textarea( $education ) . '</textarea>';
+
+    echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_certifications">' . __( 'Certifications & Memberships', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'Comma-separated or one per line.', 'healthbeyondage' ) . '</p>';
+    echo '<textarea id="hba_team_certifications" name="hba_team_certifications" style="width:100%;" rows="3">' . esc_textarea( $certifications ) . '</textarea>';
+
+    echo '<p style="margin-top:1.5rem;"><strong><label for="hba_team_publications_list">' . __( 'Selected Publications', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'One publication per line.', 'healthbeyondage' ) . '</p>';
+    echo '<textarea id="hba_team_publications_list" name="hba_team_publications_list" style="width:100%;" rows="4">' . esc_textarea( $publications_list ) . '</textarea>';
+
     echo '<p style="margin-top:2rem; padding:1rem; background:#f0f0f1; border-left:4px solid #2271b1;"><strong>Note:</strong> Set the team member\'s profile photo using the <strong>"Featured Image"</strong> box. Write their full biography in the main editor above.</p>';
 }
 
@@ -112,6 +159,33 @@ function hba_save_team_meta_box_data( $post_id ) {
             }
             if ( isset( $_POST['hba_team_tags'] ) ) {
                 update_post_meta( $post_id, '_hba_team_tags', sanitize_text_field( $_POST['hba_team_tags'] ) );
+            }
+            if ( isset( $_POST['hba_team_email'] ) ) {
+                update_post_meta( $post_id, '_hba_team_email', sanitize_email( $_POST['hba_team_email'] ) );
+            }
+            if ( isset( $_POST['hba_team_years_practice'] ) ) {
+                update_post_meta( $post_id, '_hba_team_years_practice', sanitize_text_field( $_POST['hba_team_years_practice'] ) );
+            }
+            if ( isset( $_POST['hba_team_articles_reviewed'] ) ) {
+                update_post_meta( $post_id, '_hba_team_articles_reviewed', sanitize_text_field( $_POST['hba_team_articles_reviewed'] ) );
+            }
+            if ( isset( $_POST['hba_team_publications_count'] ) ) {
+                update_post_meta( $post_id, '_hba_team_publications_count', sanitize_text_field( $_POST['hba_team_publications_count'] ) );
+            }
+            if ( isset( $_POST['hba_team_joined_year'] ) ) {
+                update_post_meta( $post_id, '_hba_team_joined_year', sanitize_text_field( $_POST['hba_team_joined_year'] ) );
+            }
+            if ( isset( $_POST['hba_team_quote'] ) ) {
+                update_post_meta( $post_id, '_hba_team_quote', sanitize_textarea_field( $_POST['hba_team_quote'] ) );
+            }
+            if ( isset( $_POST['hba_team_education'] ) ) {
+                update_post_meta( $post_id, '_hba_team_education', sanitize_textarea_field( $_POST['hba_team_education'] ) );
+            }
+            if ( isset( $_POST['hba_team_certifications'] ) ) {
+                update_post_meta( $post_id, '_hba_team_certifications', sanitize_textarea_field( $_POST['hba_team_certifications'] ) );
+            }
+            if ( isset( $_POST['hba_team_publications_list'] ) ) {
+                update_post_meta( $post_id, '_hba_team_publications_list', sanitize_textarea_field( $_POST['hba_team_publications_list'] ) );
             }
         }
     }

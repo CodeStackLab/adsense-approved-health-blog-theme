@@ -323,7 +323,7 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
 
 /* ========== SINGLE ARTICLE ========== */
 .article-layout { max-width: 1180px; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1fr 300px; gap: 2.5rem; align-items: start; }
-.article-main {}
+
 .article-cat { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--g2); margin-bottom: .65rem; }
 .article-main h1 { font-family: var(--serif); font-size: clamp(1.6rem,2.5vw,2.2rem); color: var(--text); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; }
 .article-byline { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.75rem; flex-wrap: wrap; }
@@ -526,8 +526,11 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
   .home-hero-left h1 { font-size: 1.8rem; }
   .home-ctas { flex-direction: column; width: 100%; gap: 1rem; }
   .home-ctas a { width: 100%; text-align: center; }
-  .home-trust-row { justify-content: center; gap: 1rem; }
-  .htrust-item { max-width: 100px; }
+  .home-trust-row { justify-content: center; gap: 0.5rem; flex-wrap: nowrap; }
+  .htrust-item { max-width: 32%; }
+  .htrust-lbl { font-size: 0.7rem; line-height: 1.2; }
+  .htrust-ico { width: 32px; height: 32px; }
+  .htrust-ico svg { width: 20px; height: 20px; }
   .nl-form { flex-direction: column; }
   .period-tabs { flex-wrap: wrap; }
 }

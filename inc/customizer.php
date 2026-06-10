@@ -125,7 +125,7 @@ function hba_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'hba_hero_sub_color',   [ 'default' => '#4a5568', 'sanitize_callback' => 'sanitize_hex_color', 'transport' => 'postMessage' ] );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hba_hero_sub_color',   [ 'label' => 'Hero Subtitle Color', 'section' => 'hba_homepage_hero' ] ) );
 
-    $wp_customize->add_setting( 'hba_hero_title_size',  [ 'default' => 3.8, 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_setting( 'hba_hero_title_size',  [ 'default' => 2.4, 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
     $wp_customize->add_control( 'hba_hero_title_size',  [ 'label' => 'Title Font Size (rem)', 'section' => 'hba_homepage_hero', 'type' => 'number', 'input_attrs' => ['min' => 1, 'max' => 6, 'step' => 0.1] ] );
 
     $wp_customize->add_setting( 'hba_hero_sub_size',    [ 'default' => 1.15, 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
@@ -601,6 +601,9 @@ function hba_customizer( $wp_customize ) {
             $wp_customize->selective_refresh->add_partial( $setting_id, [
                 'selector'         => $selector,
                 'fallback_refresh' => true,
+                'render_callback'  => function( $partial ) {
+                    return get_theme_mod( $partial->id );
+                },
             ] );
         }
     }
