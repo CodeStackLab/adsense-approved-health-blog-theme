@@ -278,9 +278,10 @@ function hba_article_card( $post_id, $extra_class = '' ) {
     $cat_name  = $cat ? $cat->name : '';
     $cat_slug  = $cat ? $cat->slug : '';
     $badge     = hba_category_badge_class( $cat_slug );
-    $author_id = $post->post_author;
-    $initials  = hba_author_initials( $author_id );
-    $author    = get_the_author_meta( 'display_name', $author_id );
+    // Rely on global post data so plugins like Co-Authors or Guest Authors work
+    $author_id = get_the_author_meta('ID');
+    $author    = get_the_author();
+    
     $read_time = hba_reading_time( $post_id );
     $link      = get_permalink( $post_id );
     ?>

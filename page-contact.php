@@ -76,12 +76,15 @@ get_header(); ?>
 }
 .contact-sidebar {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     box-sizing: border-box;
+}
+.contact-sidebar a {
+    word-break: break-all;
 }
 .contact-form-container {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -105,7 +108,12 @@ get_header(); ?>
     .hba-cf7-wrapper .wpcf7-form-control-wrap { display: block; width: 100%; }
     .contact-form-container { padding: 1.5rem !important; }
 }
+@media (max-width: 480px) {
+    .articles-hero { padding: 3rem 1rem 2rem !important; }
+    .articles-hero h1 { font-size: 2rem !important; }
+    .contact-sidebar > div { flex-direction: column; align-items: flex-start !important; }
+    .contact-sidebar > div > div:first-child { margin-bottom: 0.5rem; }
+}
 </style>
-</div>
 
 <?php get_footer(); ?>

@@ -138,6 +138,21 @@ function hba_team_details_meta_box_html( $post ) {
     echo '<p class="description" style="margin-bottom:0.5rem;">' . __( 'One publication per line.', 'healthbeyondage' ) . '</p>';
     echo '<textarea id="hba_team_publications_list" name="hba_team_publications_list" style="width:100%;" rows="4">' . esc_textarea( $publications_list ) . '</textarea>';
 
+    echo '<hr style="margin:2rem 0;">';
+    echo '<h3>' . __( 'Social Links', 'healthbeyondage' ) . '</h3>';
+
+    $linkedin = get_post_meta( $post->ID, '_hba_team_linkedin', true );
+    echo '<p><strong><label for="hba_team_linkedin">' . __( 'LinkedIn URL', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="url" id="hba_team_linkedin" name="hba_team_linkedin" value="' . esc_attr( $linkedin ) . '" style="width:100%; max-width:400px;" placeholder="https://linkedin.com/in/..." />';
+
+    $twitter = get_post_meta( $post->ID, '_hba_team_twitter', true );
+    echo '<p style="margin-top:1rem;"><strong><label for="hba_team_twitter">' . __( 'Twitter/X URL', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="url" id="hba_team_twitter" name="hba_team_twitter" value="' . esc_attr( $twitter ) . '" style="width:100%; max-width:400px;" placeholder="https://twitter.com/..." />';
+
+    $website = get_post_meta( $post->ID, '_hba_team_website', true );
+    echo '<p style="margin-top:1rem;"><strong><label for="hba_team_website">' . __( 'Personal Website', 'healthbeyondage' ) . '</label></strong></p>';
+    echo '<input type="url" id="hba_team_website" name="hba_team_website" value="' . esc_attr( $website ) . '" style="width:100%; max-width:400px;" placeholder="https://..." />';
+
     echo '<p style="margin-top:2rem; padding:1rem; background:#f0f0f1; border-left:4px solid #2271b1;"><strong>Note:</strong> Set the team member\'s profile photo using the <strong>"Featured Image"</strong> box. Write their full biography in the main editor above.</p>';
 }
 
@@ -186,6 +201,15 @@ function hba_save_team_meta_box_data( $post_id ) {
             }
             if ( isset( $_POST['hba_team_publications_list'] ) ) {
                 update_post_meta( $post_id, '_hba_team_publications_list', sanitize_textarea_field( $_POST['hba_team_publications_list'] ) );
+            }
+            if ( isset( $_POST['hba_team_linkedin'] ) ) {
+                update_post_meta( $post_id, '_hba_team_linkedin', esc_url_raw( $_POST['hba_team_linkedin'] ) );
+            }
+            if ( isset( $_POST['hba_team_twitter'] ) ) {
+                update_post_meta( $post_id, '_hba_team_twitter', esc_url_raw( $_POST['hba_team_twitter'] ) );
+            }
+            if ( isset( $_POST['hba_team_website'] ) ) {
+                update_post_meta( $post_id, '_hba_team_website', esc_url_raw( $_POST['hba_team_website'] ) );
             }
         }
     }

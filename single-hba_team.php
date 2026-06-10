@@ -9,7 +9,7 @@ get_header();
     <?php
     while ( have_posts() ) : the_post();
         // Check if this is Dr. Sarah Matheson to apply fallbacks
-        $is_sarah = (strpos(get_the_title(), 'Sarah Matheson') !== false || true); // Defaulting to true as requested to show the content
+        $is_sarah = (strpos(get_the_title(), 'Sarah Matheson') !== false);
         
         $role               = get_post_meta( get_the_ID(), '_hba_team_role', true );
         $role               = $role ?: ($is_sarah ? 'Lead Medical Reviewer' : '');
@@ -92,6 +92,32 @@ get_header();
                     
                     <?php if ( $credentials ) : ?>
                         <div style="font-size:1.1rem; color:rgba(255,255,255,0.8);"><?php echo esc_html( $credentials ); ?></div>
+                    <?php endif; ?>
+                    
+                    <?php 
+                    $linkedin = get_post_meta( get_the_ID(), '_hba_team_linkedin', true );
+                    $twitter  = get_post_meta( get_the_ID(), '_hba_team_twitter', true );
+                    $website  = get_post_meta( get_the_ID(), '_hba_team_website', true );
+                    
+                    if ( $linkedin || $twitter || $website ) : 
+                    ?>
+                        <div style="display:flex; gap:1rem; margin-top:1.5rem;">
+                            <?php if ( $linkedin ) : ?>
+                                <a href="<?php echo esc_url($linkedin); ?>" target="_blank" rel="noopener noreferrer" style="color:#fff; background:rgba(255,255,255,0.1); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background 0.2s;" aria-label="LinkedIn" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            <?php endif; ?>
+                            <?php if ( $twitter ) : ?>
+                                <a href="<?php echo esc_url($twitter); ?>" target="_blank" rel="noopener noreferrer" style="color:#fff; background:rgba(255,255,255,0.1); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background 0.2s;" aria-label="Twitter" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                                </a>
+                            <?php endif; ?>
+                            <?php if ( $website ) : ?>
+                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener noreferrer" style="color:#fff; background:rgba(255,255,255,0.1); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background 0.2s;" aria-label="Website" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                                </a>
+                            <?php endif; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
                 
