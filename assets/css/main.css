@@ -357,6 +357,8 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
 .article-body ul, .article-body ol { margin: 0 0 1.25rem 1.4rem; }
 .article-body li { margin-bottom: .45rem; }
 .article-body strong { font-weight: 600; color: var(--text); }
+.article-body a { color: var(--g1); text-decoration: underline; text-decoration-color: var(--g-light); text-underline-offset: 3px; font-weight: 500; transition: all .15s; }
+.article-body a:hover { color: var(--g2); text-decoration-color: var(--g2); }
 .callout { background: var(--g-pale); border-left: 4px solid var(--g2); border-radius: 0 8px 8px 0; padding: 1.1rem 1.25rem; margin: 1.5rem 0; font-size: .86rem; color: var(--mid); }
 .callout strong { color: var(--g1); display: block; margin-bottom: .3rem; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
 .key-takeaways { background: var(--g1); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
