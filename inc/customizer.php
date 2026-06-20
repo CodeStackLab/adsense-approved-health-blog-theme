@@ -224,6 +224,34 @@ function hba_customizer( $wp_customize ) {
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hba_expert_photo', [ 'label' => 'Reviewer Photo (Small Circle)', 'section' => 'hba_homepage_hero' ] ) );
 
     /* ============================
+       SECTION: Editorial Policy Page
+    ============================ */
+    $wp_customize->add_section( 'hba_editorial_policy_section', [
+        'title'    => __( '📰 Editorial Policy Page', 'healthbeyondage' ),
+        'panel'    => 'hba_theme_options',
+        'priority' => 36,
+    ] );
+
+    $wp_customize->add_setting( 'hba_ep_hero_eyebrow', [ 'default' => '⚕ Editorial Standards', 'sanitize_callback' => 'sanitize_text_field' ] );
+    $wp_customize->add_control( 'hba_ep_hero_eyebrow', [ 'label' => 'Hero Eyebrow', 'section' => 'hba_editorial_policy_section', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_ep_hero_title', [ 'default' => 'Our Editorial Policy', 'sanitize_callback' => 'sanitize_text_field' ] );
+    $wp_customize->add_control( 'hba_ep_hero_title', [ 'label' => 'Hero Title', 'section' => 'hba_editorial_policy_section', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_ep_hero_lede', [ 'default' => 'Health Beyond Age exists to help people make informed decisions about their health. That only works if you can trust what you read here. This page explains exactly how our content gets made — from research to fact-checking to medical review — so you always know what\'s behind the advice.', 'sanitize_callback' => 'wp_kses_post' ] );
+    $wp_customize->add_control( 'hba_ep_hero_lede', [ 'label' => 'Hero Description', 'section' => 'hba_editorial_policy_section', 'type' => 'textarea' ] );
+
+    $wp_customize->add_setting( 'hba_ep_last_updated', [ 'default' => '📅 Last updated: June 2026', 'sanitize_callback' => 'sanitize_text_field' ] );
+    $wp_customize->add_control( 'hba_ep_last_updated', [ 'label' => 'Last Updated Text', 'section' => 'hba_editorial_policy_section', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_ep_review_freq', [ 'default' => '🔄 Reviewed annually, or sooner if guidelines change', 'sanitize_callback' => 'sanitize_text_field' ] );
+    $wp_customize->add_control( 'hba_ep_review_freq', [ 'label' => 'Review Frequency', 'section' => 'hba_editorial_policy_section', 'type' => 'text' ] );
+
+    $wp_customize->add_setting( 'hba_ep_reviewer_id', [ 'default' => '', 'sanitize_callback' => 'absint' ] );
+    $wp_customize->add_control( 'hba_ep_reviewer_id', [ 'label' => 'Sidebar Reviewer (Enter Reviewer Post ID)', 'section' => 'hba_editorial_policy_section', 'type' => 'number' ] );
+
+
+    /* ============================
        SECTION: Homepage — Featured Articles
     ============================ */
     $wp_customize->add_section( 'hba_sect_featured', [

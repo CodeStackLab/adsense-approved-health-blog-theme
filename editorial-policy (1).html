@@ -1,12 +1,53 @@
-﻿<?php
-/**
- * Template Name: Editorial Policy
- */
-get_header(); ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editorial Policy - Health Beyond Age</title>
 <style>
-/* Editorial Policy specific styles */
+  :root{
+    --ink:#1b2430;
+    --muted:#5b6675;
+    --line:#e7e3d9;
+    --bg-soft:#f7f5ef;
+    --accent:#2f6f5e;
+    --accent-dark:#234f43;
+    --accent-soft:#e7f0ec;
+    --card-bg:#ffffff;
+    --radius:14px;
+    --maxw:1180px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
 
+  /* ============ TOP NAV ============ */
+  .site-header{border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:50;}
+  .nav-wrap{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:24px;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-0.01em;color:var(--ink);flex:none;}
+  .logo-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;flex:none;}
+  .primary-nav{display:flex;gap:28px;list-style:none;margin:0;padding:0;flex:1;justify-content:center;}
+  .primary-nav a{font-size:15px;font-weight:500;color:var(--ink);padding:6px 2px;border-bottom:2px solid transparent;}
+  .primary-nav a:hover{color:var(--accent);}
+  .nav-right{display:flex;align-items:center;gap:18px;flex:none;}
+  .nav-right a{font-size:14.5px;font-weight:500;}
+  .nav-right .btn-outline{border:1px solid var(--line);border-radius:999px;padding:8px 18px;}
+  .nav-right .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+  .nav-toggle{display:none;}
+
+  @media (max-width:900px){
+    .primary-nav{display:none;}
+    .nav-right .btn-outline{padding:7px 14px;font-size:13.5px;}
+  }
+
+  /* ============ BREADCRUMB STRIP ============ */
+  .breadcrumb-strip{background:var(--bg-soft);border-bottom:1px solid var(--line);}
+  .breadcrumb-wrap{max-width:var(--maxw);margin:0 auto;padding:12px 24px;font-size:13.5px;color:var(--muted);}
+  .breadcrumb-wrap a:hover{color:var(--accent);}
+
+  /* ============ PAGE LAYOUT ============ */
   .page-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px 64px;display:grid;grid-template-columns:1fr 320px;gap:48px;}
   @media (max-width:980px){
     .page-wrap{grid-template-columns:1fr;}
@@ -117,29 +158,70 @@ get_header(); ?>
     .widget{flex:1 1 280px;}
   }
 
-  
+  /* ============ FOOTER ============ */
+  .site-footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:20px;}
+  .footer-wrap{max-width:var(--maxw);margin:0 auto;padding:48px 24px 28px;}
+  .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px;}
+  @media (max-width:800px){.footer-top{grid-template-columns:1fr 1fr;}}
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:13.5px;color:var(--muted);max-width:280px;}
+  .footer-col h5{font-size:12.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink);margin:0 0 14px;}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-col a{font-size:13.5px;color:var(--muted);}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-stats{display:flex;flex-wrap:wrap;gap:24px;border-top:1px solid var(--line);padding-top:22px;margin-bottom:18px;font-size:13px;color:var(--muted);}
+  .footer-stats strong{color:var(--ink);}
+  .footer-bottom{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;}
 </style>
+</head>
+<body>
 
-<div class="breadcrumb"><div class="breadcrumb-inner"><a href="<?php echo esc_url(home_url('/')); ?>">Home</a><span class="sep">›</span><span>Editorial Policy</span></div></div>
+<!-- ============ TOP NAV ============ -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="https://healthbeyondage.com/" class="logo">
+      <span class="logo-mark">+</span>
+      Health Beyond Age
+    </a>
+    <ul class="primary-nav">
+      <li><a href="https://healthbeyondage.com/nutrition/">Nutrition</a></li>
+      <li><a href="https://healthbeyondage.com/mental-wellness/">Mental Wellness</a></li>
+      <li><a href="https://healthbeyondage.com/preventive-health/">Preventive Health</a></li>
+      <li><a href="https://healthbeyondage.com/fitness/">Fitness</a></li>
+      <li><a href="https://healthbeyondage.com/skin-care/">Skin Care</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://healthbeyondage.com/about">About Us</a>
+      <a href="https://healthbeyondage.com/blog" class="btn-outline">All Articles</a>
+    </div>
+  </div>
+</header>
 
+<!-- ============ BREADCRUMB ============ -->
+<div class="breadcrumb-strip">
+  <div class="breadcrumb-wrap">
+    <a href="https://healthbeyondage.com/">Home</a> &nbsp;/&nbsp; Editorial Policy
+  </div>
+</div>
 
+<!-- ============ PAGE BODY ============ -->
 <div class="page-wrap">
 
   <!-- ============ MAIN COLUMN ============ -->
   <main class="main-col">
 
     <div class="policy-hero">
-      <span class="eyebrow"><?php echo esc_html($hero_eyebrow); ?></span>
-      <h1><?php echo esc_html($hero_title); ?></h1>
+      <span class="eyebrow">⚕ Editorial Standards</span>
+      <h1>Our Editorial Policy</h1>
       <p class="lede">
         Health Beyond Age exists to help people make informed decisions about their health.
         That only works if you can trust what you read here. This page explains exactly how
-        our content gets made â€” from research to fact-checking to medical review â€” so you
+        our content gets made — from research to fact-checking to medical review — so you
         always know what's behind the advice.
       </p>
       <div class="meta-row">
-        <span><?php echo esc_html($last_updated); ?></span>
-        <span><?php echo esc_html($review_freq); ?></span>
+        <span>📅 Last updated: June 2026</span>
+        <span>🔄 Reviewed annually, or sooner if guidelines change</span>
       </div>
     </div>
 
@@ -149,7 +231,7 @@ get_header(); ?>
       <p>
         Every article published on Health Beyond Age is written or reviewed by someone with
         relevant clinical training, lived professional expertise, or a research background in
-        the topic at hand. We are not a content farm repackaging other websites â€” every piece
+        the topic at hand. We are not a content farm repackaging other websites — every piece
         starts from primary sources and clinical guidelines, and is shaped by people who
         understand the subject matter firsthand.
       </p>
@@ -188,7 +270,7 @@ get_header(); ?>
       <h2>How We Research Our Content</h2>
       <p class="section-sub">What happens before a single word gets written</p>
       <p>
-        Topics are chosen because they're genuinely useful â€” common questions our readers ask,
+        Topics are chosen because they're genuinely useful — common questions our readers ask,
         conditions that affect people as they age, or areas where misinformation tends to
         spread. From there, every article follows the same research backbone:
       </p>
@@ -206,7 +288,7 @@ get_header(); ?>
           <h3>Cross-check against clinical guidelines</h3>
           <p>
             We compare findings against guidance from major health authorities and medical
-            associations relevant to the topic â€” for example, cardiology guidance for heart
+            associations relevant to the topic — for example, cardiology guidance for heart
             health content, or endocrinology guidance for diabetes content.
           </p>
         </div>
@@ -234,8 +316,8 @@ get_header(); ?>
       <h2>Our Fact-Checking Process</h2>
       <p class="section-sub">Nothing publishes on a single person's word</p>
       <p>
-        Every factual claim â€” statistics, study findings, drug or supplement interactions,
-        symptom descriptions, treatment recommendations â€” is checked against its original
+        Every factual claim — statistics, study findings, drug or supplement interactions,
+        symptom descriptions, treatment recommendations — is checked against its original
         source before publication. Our fact-checking process includes:
       </p>
 
@@ -247,7 +329,7 @@ get_header(); ?>
           <tbody>
             <tr><td>Source verification</td><td>Every statistic or study citation is traced back to its original publication, not a secondhand summary.</td></tr>
             <tr><td>Currency check</td><td>We confirm cited research and guidelines are still current, not superseded by more recent findings.</td></tr>
-            <tr><td>Context check</td><td>We confirm a study's population, sample size, and limitations are represented accurately â€” not overstated for effect.</td></tr>
+            <tr><td>Context check</td><td>We confirm a study's population, sample size, and limitations are represented accurately — not overstated for effect.</td></tr>
             <tr><td>Internal consistency</td><td>Claims are checked against other published Health Beyond Age content to avoid contradicting guidance elsewhere on the site.</td></tr>
             <tr><td>Medical accuracy</td><td>A qualified reviewer independently confirms the clinical content is correct and appropriately cautious (see below).</td></tr>
           </tbody>
@@ -296,7 +378,7 @@ get_header(); ?>
       <p class="section-sub">The final check before anything goes live</p>
       <p>
         All health and medical content on this site is reviewed by a qualified professional
-        before publication â€” separate from the person who wrote it. This separation matters:
+        before publication — separate from the person who wrote it. This separation matters:
         it means every article gets an independent second opinion from someone with the
         clinical background to catch errors a writer might miss.
       </p>
@@ -305,13 +387,13 @@ get_header(); ?>
         <img src="http://healthbeyondage.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-10-at-12.55.05-PM.jpeg" alt="Dr. Sarah Matheson">
         <div>
           <div class="rname">Dr. Sarah Matheson, MBChB, MRCGP</div>
-          <div class="rrole">Lead Medical Reviewer Â· Internal Medicine, Preventive Health &amp; Healthy Aging</div>
+          <div class="rrole">Lead Medical Reviewer · Internal Medicine, Preventive Health &amp; Healthy Aging</div>
         </div>
       </div>
 
       <p style="margin-top:20px;">
         Our review team also includes physicians and specialists who review content within
-        their own area of expertise â€” for example, our dermatology content is reviewed by a
+        their own area of expertise — for example, our dermatology content is reviewed by a
         board-certified dermatologist, and our nutrition content is reviewed by a registered
         dietitian or physician with nutrition expertise. You can see our full reviewer team,
         credentials, and specialties on our <a href="https://healthbeyondage.com/team" style="color:var(--accent);font-weight:600;">Meet the Team</a> page.
@@ -349,7 +431,7 @@ get_header(); ?>
 
     <!-- WHAT THIS SITE IS / ISN'T -->
     <div class="section">
-      <h2>What This Site Is â€” and Isn't</h2>
+      <h2>What This Site Is — and Isn't</h2>
       <div class="faq-item">
         <h3>This is educational content, not personal medical advice</h3>
         <p>
@@ -385,29 +467,53 @@ get_header(); ?>
 
   </main>
 
-    <!-- ============ SIDEBAR ============ -->
+  <!-- ============ SIDEBAR ============ -->
   <aside class="sidebar">
 
     <!-- Trending -->
     <div class="widget">
       <div class="widget-title"><span class="dot"></span> 🔥 Trending Articles</div>
       <div>
-        <?php
-        $trending = new WP_Query(['posts_per_page' => 5, 'meta_key' => 'hba_view_count', 'orderby' => 'meta_value_num', 'order' => 'DESC']);
-        $rank = 1;
-        if ($trending->have_posts()) : while ($trending->have_posts()) : $trending->the_post();
-            $cat = get_the_category();
-            $cat_name = !empty($cat) ? $cat[0]->name : 'Health';
-        ?>
         <div class="trend-item">
-          <div class="trend-rank"><?php echo $rank++; ?></div>
+          <div class="trend-rank">1</div>
           <div>
-            <div class="trend-meta"><?php echo esc_html($cat_name); ?></div>
-            <a class="trend-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            <div class="trend-sub"><?php echo hba_reading_time(get_the_ID()); ?></div>
+            <div class="trend-meta">Preventive Health</div>
+            <a class="trend-title" href="https://healthbeyondage.com/world-cup-crowd-safety/">World Cup Crowd Safety at Packed Matches</a>
+            <div class="trend-sub">9 min read</div>
           </div>
         </div>
-        <?php endwhile; endif; wp_reset_postdata(); ?>
+        <div class="trend-item">
+          <div class="trend-rank">2</div>
+          <div>
+            <div class="trend-meta">Fitness</div>
+            <a class="trend-title" href="https://healthbeyondage.com/brain-health-tips/">Brain Health Basics That Hold Up in 2026</a>
+            <div class="trend-sub">8 min read</div>
+          </div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-rank">3</div>
+          <div>
+            <div class="trend-meta">Mental Wellness</div>
+            <a class="trend-title" href="https://healthbeyondage.com/foods-for-brain-health/">Foods for Brain Health That Support Memory</a>
+            <div class="trend-sub">8 min read</div>
+          </div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-rank">4</div>
+          <div>
+            <div class="trend-meta">Digestive Health</div>
+            <a class="trend-title" href="https://healthbeyondage.com/gut-brain-connection/">Gut-Brain Connection Explained in Plain English</a>
+            <div class="trend-sub">6 min read</div>
+          </div>
+        </div>
+        <div class="trend-item">
+          <div class="trend-rank">5</div>
+          <div>
+            <div class="trend-meta">Fitness</div>
+            <a class="trend-title" href="https://healthbeyondage.com/world-cup-fan-guide/">World Cup Fan Guide for First-Time Travelers</a>
+            <div class="trend-sub">8 min read</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -415,12 +521,18 @@ get_header(); ?>
     <div class="widget">
       <div class="widget-title"><span class="dot"></span> Browse by Topic</div>
       <div class="topic-pills">
-        <?php
-        $cats = get_categories(['hide_empty' => true]);
-        foreach ($cats as $c) {
-            echo '<a href="' . get_category_link($c->term_id) . '">' . esc_html($c->name) . '</a>';
-        }
-        ?>
+        <a href="https://healthbeyondage.com/nutrition/">Nutrition</a>
+        <a href="https://healthbeyondage.com/heart-health/">Heart Health</a>
+        <a href="https://healthbeyondage.com/mental-wellness/">Mental Wellness</a>
+        <a href="https://healthbeyondage.com/menopause/">Menopause</a>
+        <a href="https://healthbeyondage.com/type-2-diabetes/">Type 2 Diabetes</a>
+        <a href="https://healthbeyondage.com/weight-management/">Weight Management</a>
+        <a href="https://healthbeyondage.com/sleep-health/">Sleep Health</a>
+        <a href="https://healthbeyondage.com/skin-care/">Skin Care</a>
+        <a href="https://healthbeyondage.com/fitness/">Fitness &amp; Exercise</a>
+        <a href="https://healthbeyondage.com/preventive-health/">Preventive Health</a>
+        <a href="https://healthbeyondage.com/digestive-health/">Digestive Health</a>
+        <a href="https://healthbeyondage.com/anxiety-depression/">Anxiety &amp; Depression</a>
       </div>
     </div>
 
@@ -428,47 +540,54 @@ get_header(); ?>
     <div class="widget">
       <div class="widget-title"><span class="dot"></span> 📖 Top Stories</div>
       <div>
-        <?php
-        $top = new WP_Query(['posts_per_page' => 4, 'orderby' => 'comment_count', 'order' => 'DESC']);
-        if ($top->have_posts()) : while ($top->have_posts()) : $top->the_post();
-            $cat = get_the_category();
-            $cat_name = !empty($cat) ? $cat[0]->name : 'Health';
-        ?>
         <div class="story-item">
-          <img class="story-thumb" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail') ?: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=100&q=80'; ?>" alt="">
+          <img class="story-thumb" src="https://healthbeyondage.com/wp-content/uploads/2026/06/featured-dehydration-signs-treatment-and-when-to-get-help-ad53242b-300x167.jpg" alt="">
           <div>
-            <div class="story-cat"><?php echo esc_html($cat_name); ?></div>
-            <a class="story-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <div class="story-cat">Preventive Health</div>
+            <a class="story-title" href="https://healthbeyondage.com/dehydration-symptoms-treatment/">Dehydration Signs, Treatment, and When to Get Help</a>
           </div>
         </div>
-        <?php endwhile; endif; wp_reset_postdata(); ?>
+        <div class="story-item">
+          <img class="story-thumb" src="https://healthbeyondage.com/wp-content/uploads/2026/06/featured-foot-pain-causes-relief-and-when-to-get-help-eb845047-300x167.jpg" alt="">
+          <div>
+            <div class="story-cat">Preventive Health</div>
+            <a class="story-title" href="https://healthbeyondage.com/foot-pain/">Foot Pain: Causes, Relief, and When to Get Help</a>
+          </div>
+        </div>
+        <div class="story-item">
+          <img class="story-thumb" src="https://healthbeyondage.com/wp-content/uploads/2026/06/senior-woman-examining-calcium-supplement-f717cf60-300x169.jpg" alt="">
+          <div>
+            <div class="story-cat">Preventive Health</div>
+            <a class="story-title" href="https://healthbeyondage.com/calcium-supplements-fracture-prevention/">Do Calcium Supplements Prevent Fractures in Older Adults?</a>
+          </div>
+        </div>
+        <div class="story-item">
+          <img class="story-thumb" src="https://healthbeyondage.com/wp-content/uploads/2026/06/featured-the-biggest-stadium-health-risks-for-fifa-fans-813350ac-300x167.jpg" alt="">
+          <div>
+            <div class="story-cat">Preventive Health</div>
+            <a class="story-title" href="https://healthbeyondage.com/stadium-health-risks/">The Biggest Stadium Health Risks for FIFA Fans</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Reviewer card -->
-    <?php if ($reviewer_id) : 
-        $r_name = get_the_title($reviewer_id);
-        $r_role = get_post_meta($reviewer_id, 'hba_team_role', true) ?: 'Medical Reviewer';
-        $r_bio = get_the_excerpt($reviewer_id) ?: 'Expert reviewer at Health Beyond Age.';
-        $r_img = get_the_post_thumbnail_url($reviewer_id, 'thumbnail');
-    ?>
     <div class="widget">
       <div class="sidebar-card reviewer-card">
-        <?php if ($r_img) echo '<img src="'.esc_url($r_img).'" alt="">'; ?>
-        <h4><?php echo esc_html($r_name); ?></h4>
-        <div class="role"><?php echo esc_html($r_role); ?></div>
-        <p><?php echo esc_html($r_bio); ?></p>
-        <a href="<?php echo get_permalink($reviewer_id); ?>">View Full Profile →</a>
+        <img src="http://healthbeyondage.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-10-at-12.55.05-PM.jpeg" alt="Dr. Sarah Matheson">
+        <h4>Dr. Sarah Matheson</h4>
+        <div class="role">Lead Medical Reviewer</div>
+        <p>Board-certified in internal medicine, with 18 years overseeing medical review at Health Beyond Age.</p>
+        <a href="https://healthbeyondage.com/team">View Full Profile →</a>
       </div>
     </div>
-    <?php endif; ?>
 
     <!-- Newsletter -->
     <div class="widget">
       <div class="newsletter-card">
         <h4>✦ Stay Ahead of Your Health</h4>
         <p>Expert-curated wellness insights, delivered every Friday. No noise, no spam.</p>
-        <a class="btn-fill" href="<?php echo esc_url(home_url('/#subscribe')); ?>">Subscribe Free</a>
+        <a class="btn-fill" href="https://healthbeyondage.com/#subscribe">Subscribe Free</a>
       </div>
     </div>
 
@@ -476,8 +595,54 @@ get_header(); ?>
 
 </div>
 
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="https://healthbeyondage.com/" class="logo"><span class="logo-mark">+</span>Health Beyond Age</a>
+        <p>Evidence-based health information to help you make informed choices and live a longer, healthier life.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="https://healthbeyondage.com/fitness/">Fitness</a></li>
+          <li><a href="https://healthbeyondage.com/heart-health/">Heart Health</a></li>
+          <li><a href="https://healthbeyondage.com/mental-wellness/">Mental Wellness</a></li>
+          <li><a href="https://healthbeyondage.com/nutrition/">Nutrition</a></li>
+          <li><a href="https://healthbeyondage.com/preventive-health/">Preventive Health</a></li>
+          <li><a href="https://healthbeyondage.com/skin-care/">Skin Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="https://healthbeyondage.com/about">About Us</a></li>
+          <li><a href="https://healthbeyondage.com/team">Meet Our Team</a></li>
+          <li><a href="https://healthbeyondage.com/contact">Contact Us</a></li>
+          <li><a href="https://healthbeyondage.com/blog">All Articles</a></li>
+          <li><a href="https://healthbeyondage.com/trending">Trending</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="https://healthbeyondage.com/privacy-policy">Privacy Policy</a></li>
+          <li><a href="https://healthbeyondage.com/terms-of-use">Terms of Use</a></li>
+          <li><a href="https://healthbeyondage.com/medical-disclaimer">Medical Disclaimer</a></li>
+          <li><a href="https://healthbeyondage.com/cookie-policy">Cookie Policy</a></li>
+          <li><a href="#" style="font-weight:600;color:var(--accent);">Editorial Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-stats">
+      <span><strong>5</strong> Health Categories</span>
+      <span><strong>100%</strong> Medically Reviewed</span>
+      <span><strong>Since 2021</strong> Publishing</span>
+    </div>
+    <div class="footer-bottom">© 2026 Health Beyond Age. All rights reserved.</div>
+  </div>
+</footer>
 
-
-<?php get_footer(); ?>
-
-
+</body>
+</html>
