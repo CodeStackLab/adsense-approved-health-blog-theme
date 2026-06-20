@@ -4,7 +4,9 @@
  */
 ?>
 
+<?php if ( ! is_single() ) : ?>
 <?php hba_newsletter_section(); ?>
+<?php endif; ?>
 
 <?php if ( ! is_page_template('page-about.php') ) : ?>
 <!-- TRUST METRICS BAR -->
