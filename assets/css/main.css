@@ -199,8 +199,8 @@ ul { list-style: none; }
 .trust-metrics-bar { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2rem 1.5rem; }
 .trust-metrics-inner { max-width: 1180px; margin: 0 auto; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
 .tmet-stat { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
-.tmet-stat .num { font-family: var(--serif); font-size: 1.75rem; font-weight: 700; color: var(--g1); line-height: 1; }
-.tmet-stat .lbl { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.tmet-stat .num { font-family: var(--sans); font-size: clamp(1.3rem, 5vw, 2.2rem); font-weight: 800; color: var(--g1); line-height: 1; text-align: center; }
+.tmet-stat .lbl { font-size: clamp(0.6rem, 2.5vw, 0.8rem); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; text-align: center; }
 
 /* ========== CATEGORY/ARCHIVE HERO ========== */
 .cat-hero { background: #fff; border-bottom: 1px solid var(--border); }
@@ -606,8 +606,8 @@ a.tag:hover, span.tag:hover, div.tag:hover, a.tag.active, span.tag.active, div.t
 .value-card p { font-size: 0.95rem; color: var(--mid); line-height: 1.6; }
 
 .about-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
-.stat-num { font-family: var(--serif); font-size: 3rem; color: var(--g1); font-weight: 700; line-height: 1; }
-.stat-lbl { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; font-weight: 500; }
+.stat-num { font-family: var(--sans); font-size: clamp(2rem, 8vw, 3.5rem); color: var(--g1); font-weight: 800; line-height: 1; }
+.stat-lbl { font-size: clamp(0.7rem, 3vw, 0.95rem); color: var(--muted); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
 
 @media(max-width: 1024px) {
   .mission-inner { grid-template-columns: 1fr; }
