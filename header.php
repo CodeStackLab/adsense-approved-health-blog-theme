@@ -9,7 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4800013240793912" crossorigin="anonymous"></script>
+    <!-- Lazy load Google AdSense to improve PageSpeed -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var lazyAds = false;
+        window.addEventListener("scroll", function() {
+            if ((document.documentElement.scrollTop != 0 && lazyAds === false) || (document.body.scrollTop != 0 && lazyAds === false)) {
+                var adScript = document.createElement("script");
+                adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4800013240793912";
+                adScript.async = true;
+                adScript.crossOrigin = "anonymous";
+                document.head.appendChild(adScript);
+                lazyAds = true;
+            }
+        }, { passive: true });
+    });
+    </script>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -24,7 +39,7 @@
                 <?php
                 $logo = get_theme_mod( 'hba_logo', 'http://srv1740311.hstgr.cloud/wp-content/uploads/2026/06/Logo-e0d0210e.png' );
                 if ( $logo ) : ?>
-                    <img class="logo-img" src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+                    <img class="logo-img" src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" loading="eager" fetchpriority="high" />
                 <?php else : ?>
                     <span style="font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--g1);"><?php bloginfo('name'); ?></span>
                 <?php endif; ?>

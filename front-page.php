@@ -122,7 +122,7 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
         <div class="home-hero-right fade-up" style="display:flex;align-items:flex-end;justify-content:flex-start;position:relative;padding-bottom:1.5rem;min-height:420px;">
             <div class="hero-blend-img">
                 <?php if ( $hero_image ) : ?>
-                    <img src="<?php echo esc_url( $hero_image ); ?>" alt="" />
+                    <img src="<?php echo esc_url( $hero_image ); ?>" alt="" fetchpriority="high" loading="eager" />
                 <?php endif; ?>
             </div>
             
