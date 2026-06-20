@@ -469,6 +469,9 @@ function hba_customizer( $wp_customize ) {
     $wp_customize->add_setting( 'hba_card_padding',        [ 'default' => 1.5, 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
     $wp_customize->add_control( 'hba_card_padding',        [ 'label' => 'Article Card Padding (rem)',    'section' => 'hba_layout', 'type' => 'number', 'input_attrs' => ['min' => 0, 'max' => 4, 'step' => 0.1] ] );
 
+    $wp_customize->add_setting( 'hba_card_title_size',     [ 'default' => 1.3, 'sanitize_callback' => 'sanitize_text_field', 'transport' => 'postMessage' ] );
+    $wp_customize->add_control( 'hba_card_title_size',     [ 'label' => 'Article Card Title Size (rem)', 'section' => 'hba_layout', 'type' => 'number', 'input_attrs' => ['min' => 0.8, 'max' => 3, 'step' => 0.05] ] );
+
     /* ============================
        SECTION: Borders & Shapes
     ============================ */

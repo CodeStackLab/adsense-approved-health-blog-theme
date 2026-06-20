@@ -163,6 +163,8 @@ function hba_get_customizer_css() {
     $sp_content_size = get_theme_mod( 'hba_sp_content_size', 0.92 );
     $sp_kt_bg        = get_theme_mod( 'hba_sp_kt_bg', '#1B6B3A' );
     $sp_callout_border = get_theme_mod( 'hba_sp_callout_border', '#27903F' );
+    
+    $card_title_size = get_theme_mod( 'hba_card_title_size', 1.3 );
 
     $hero_font_mod = get_theme_mod( 'hba_hero_font', '' );
     $hero_font     = !empty($hero_font_mod) ? $hero_font_mod : $head_font;
@@ -241,6 +243,7 @@ function hba_get_customizer_css() {
         border-width: var(--br-thick) !important;
     }
     .art-card { padding: var(--card-pad) !important; }
+    .art-body h3 { font-size: {$card_title_size}rem !important; }
     .btn, .btn-ghost, .btn-green { border-radius: var(--btn-rad) !important; background-color: var(--btn-bg) !important; color: var(--btn-txt) !important; border-color: var(--btn-bg) !important; }
     .btn:hover, .btn-ghost:hover, .btn-green:hover { background-color: var(--btn-h-bg) !important; color: var(--btn-h-txt) !important; border-color: var(--btn-h-bg) !important; }
     img { border-radius: var(--img-rad); }
