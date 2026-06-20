@@ -9,22 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <!-- Lazy load Google AdSense to improve PageSpeed -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var lazyAds = false;
-        window.addEventListener("scroll", function() {
-            if ((document.documentElement.scrollTop != 0 && lazyAds === false) || (document.body.scrollTop != 0 && lazyAds === false)) {
-                var adScript = document.createElement("script");
-                adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4800013240793912";
-                adScript.async = true;
-                adScript.crossOrigin = "anonymous";
-                document.head.appendChild(adScript);
-                lazyAds = true;
-            }
-        }, { passive: true });
-    });
-    </script>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
