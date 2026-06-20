@@ -33,19 +33,62 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
 .home-hero p.home-hero-subtitle { color: <?php echo esc_html($h_sc); ?> !important; font-size: <?php echo esc_html($h_ss); ?>rem !important; }
 .section.bg-pale { background: <?php echo esc_html($f_bg); ?> !important; }
 .nl-section { background: linear-gradient(155deg, <?php echo esc_html($n_bg); ?> 0%, #074030 100%) !important; }
-@media (max-width: 768px) {
+
+/* Hero Image Blending Styles */
+@media (min-width: 1025px) {
+    .hero-blend-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 58vw;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .hero-blend-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        mask-image: linear-gradient(to right, transparent 0%, black 35%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+    }
+    .home-hero-right {
+        position: static !important;
+    }
+}
+@media (max-width: 1024px) {
+    .hero-blend-img {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin-bottom: -1rem;
+        z-index: 1;
+    }
+    .hero-blend-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        mask-image: linear-gradient(to bottom, transparent 0%, black 25%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%);
+    }
     .home-hero h1 { font-size: clamp(2rem, 8vw, <?php echo esc_html($h_ts); ?>rem) !important; line-height: 1.2 !important; }
     .home-hero p.home-hero-subtitle { font-size: 1.05rem !important; }
+    .home-hero-right {
+        padding-bottom: 2rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    .hero-blend-img { height: 320px; }
 }
 </style>
 
 <!-- ===== HOMEPAGE HERO ===== -->
 <section class="home-hero">
-    <div class="home-hero-bg-img fade-up" style="position: absolute; top: 0; right: 0; bottom: 0; width: 60%; z-index: 1; pointer-events: none;">
-        <?php if ( $hero_image ) : ?>
-            <img src="<?php echo esc_url( $hero_image ); ?>" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center top; mask-image: linear-gradient(to right, transparent 0%, black 35%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);" />
-        <?php endif; ?>
-    </div>
     <div class="home-hero-wrap" style="position: relative; z-index: 2;">
         <div class="home-hero-left">
             <div class="home-eyebrow"><?php echo esc_html( $hero_eyebrow ); ?></div>
@@ -77,7 +120,13 @@ $h_ss = get_theme_mod('hba_hero_sub_size', 1.15);
             </div>
         </div>
         <div class="home-hero-right fade-up" style="display:flex;align-items:flex-end;justify-content:flex-start;position:relative;padding-bottom:1.5rem;min-height:420px;">
-            <div class="home-medrev-card" style="position:relative; bottom:auto; left:1.5rem;">
+            <div class="hero-blend-img">
+                <?php if ( $hero_image ) : ?>
+                    <img src="<?php echo esc_url( $hero_image ); ?>" alt="" />
+                <?php endif; ?>
+            </div>
+            
+            <div class="home-medrev-card" style="position:relative; bottom:auto; left:auto; z-index:2; max-width:380px;">
                 <div class="mrc-avatar">
                     <img src="<?php echo esc_url( get_theme_mod( 'hba_expert_photo', 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&q=80' ) ); ?>" alt="Medical Reviewer"/>
                 </div>
