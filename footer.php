@@ -107,6 +107,7 @@
                     <li><a href="<?php echo esc_url( home_url('/terms-of-use') ); ?>"><?php esc_html_e('Terms of Use','healthbeyondage'); ?></a></li>
                     <li><a href="<?php echo esc_url( home_url('/medical-disclaimer') ); ?>"><?php esc_html_e('Medical Disclaimer','healthbeyondage'); ?></a></li>
                     <li><a href="<?php echo esc_url( home_url('/cookie-policy') ); ?>"><?php esc_html_e('Cookie Policy','healthbeyondage'); ?></a></li>
+                    <li><a href="<?php echo esc_url( home_url('/editorial-policy') ); ?>" style="font-weight:600;color:var(--accent);"><?php esc_html_e('Editorial Policy','healthbeyondage'); ?></a></li>
                 </ul>
             </div>
 
